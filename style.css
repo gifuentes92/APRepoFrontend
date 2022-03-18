@@ -17,9 +17,19 @@ box-sizing: border-box;
   font-weight:normal;
 }
 
+.arriba{
+  position:fixed;
+  bottom:50px;
+  right:50px;
+}
+
+.arriba:hover{
+  bottom:75px;
+  right:50px;
+}
+
 .body{
-    font-family: 'Lucida Sans';
-    overflow-x: hidden;
+    
     background: #151133;
     background: -moz-linear-gradient(top,  #151133 24%, #2e1b63 57%, #2e1b63 76%, #7966d7 99%);
     background: -webkit-linear-gradient(top,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
@@ -29,10 +39,8 @@ box-sizing: border-box;
 }
     
 
-    img{
-        width: 100%;
-    }
 .avatar{
+    width: 100%;
     border-radius: 50%;
     width: 13%;
     margin-top: -10%;
@@ -61,15 +69,16 @@ box-sizing: border-box;
   
   .topnav a {
     font-family: font_2;
-    position:static;
     float:right;
     background-color:#7966d7;
     color: white;
     text-align: center;
     padding: 14px 16px;
+    display: inline-block;
     text-decoration: none;
     font-size: 17px;
     border-radius: 5%;
+    
   }
   .topnav a:hover {
     font-family: font_2;
@@ -129,8 +138,8 @@ box-sizing: border-box;
     font-size: 17px;
   }
   
- /* @media screen and (max-width: 600px) {
-    .topnav a, .topnav input[type=text] {
+ @media screen and (max-width: 600px) {
+    .topnav input[type=text] {
       font-family: font_2;
       float: none;
       display: block;
@@ -139,10 +148,8 @@ box-sizing: border-box;
       margin: 0;
       padding: 14px;
     }
-    .topnav input[type=text] {
-      border: 1px solid #ccc;
-    }
-  }*/
+    
+  }
 
 .titulo{
     color:antiquewhite;
@@ -168,7 +175,7 @@ box-sizing: border-box;
 
 .desc{
     font-family:font_2;
-    font-size: 2em;
+    font-size: 1.7em;
     text-align: center;
     color:antiquewhite;
     text-shadow:1px 1px 2 #151133;
@@ -195,6 +202,18 @@ box-sizing: border-box;
   color:antiquewhite
 }
 
+.contacto{
+  font-family:font_2;
+  font-size:large;
+  color:antiquewhite;
+}
+
+@media screen and (max-width: 500px) {
+  .pixellari{
+    font-size: x-large;
+  }
+}
+
 .ul{
   font-family:font_2;
   font-size:large;
@@ -205,8 +224,9 @@ box-sizing: border-box;
     
 @media screen and (max-width: 650px) {
         .parrafo {
-          width: 60%;
+          width: 90%;
           display: block;
+          font-size:medium;
         }
       }
 
