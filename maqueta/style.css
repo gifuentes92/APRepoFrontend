@@ -1,14 +1,14 @@
 
 @font-face {
   font-family:font_1;
-  src: url(/fonts/Pixellari.ttf);
+  src: url(/maqueta/fonts/Pixellari.ttf);
   font-style:normal;
   font-weight:normal;
 }
 
 @font-face {
   font-family:font_2;
-  src: url(/fonts/Vcr.ttf);
+  src: url(/maqueta/fonts/Vcr.ttf);
   font-style:normal;
   font-weight:normal;
 }
@@ -152,7 +152,7 @@
     margin-bottom: auto;
 
     
-    background-image: url(/img/bg3.gif);
+    background-image: url(/maqueta/img/bg3.gif);
     height: 100%;
     background-position:center;
     background-repeat: no-repeat;
@@ -178,7 +178,7 @@
 .parrafo{
     position: static;
     text-size-adjust: medium;
-    background-image:url(/img/pixel.jpg);
+    background-image:url(/maqueta/img/pixel.jpg);
     background-size:auto;
     background-repeat:repeat-x;
     background-position: center;

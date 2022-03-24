@@ -1,0 +1,13 @@
+@font-face {
+    font-family:font_1;
+    src: url(/frontend/src/assets/fonts/Vcr.ttf);
+    font-style:normal;
+    font-weight:normal;
+  }
+  
+  @font-face {
+    font-family:font_2;
+    src: url(/frontend/src/assets/fonts/Vcr.ttf);
+    font-style:normal;
+    font-weight:normal;
+  }
