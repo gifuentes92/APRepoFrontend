@@ -287,7 +287,7 @@
 }
 
 
-.boton-editar{
+.boton-editar,.boton-editar1,.boton-editar2,.boton-editar3 {
   float:right;
   font-family: font_2;  
   padding: 6px;
@@ -299,7 +299,22 @@
   border-radius: 8px;
 }
 
-.boton-quitar{
+.boton-editar2{
+  margin-right: 26%;
+  margin-bottom: 2%;
+  position: static;
+  font-size: small;
+}
+
+.boton-editar3{
+    position:static;
+    margin-right:60px;
+}
+
+
+
+
+.boton-quitar,.boton-quitar1,.boton-quitar2,.boton-quitar3{
   float:right;
   font-family: font_2;  
   padding: 6px;
@@ -309,4 +324,11 @@
   margin-right: 16px;
   font-size: 17px;
   border-radius: 8px;
+}
+
+.boton-quitar2 {
+
+  margin-bottom: 2%;
+  font-size: small;
+  position:static
 }

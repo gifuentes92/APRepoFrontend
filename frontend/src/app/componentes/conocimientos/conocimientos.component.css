@@ -1,0 +1,26 @@
+.parrafo{
+    position: static;
+    text-size-adjust: medium;
+    background-image:url(../conocimientos/assets/pixel.jpg);
+    background-size:auto;
+    background-repeat:repeat-x;
+    background-position: center;
+    margin: 0 16rem 3rem 16rem;
+    padding: 2rem 8rem 4rem 8rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    }
+
+
+
+.pixellari{
+  font-family:font_1;
+  font-size: xx-large;
+  color:antiquewhite
+}
+
+.ul{
+  font-family:font_2;
+  font-size:large;
+  color:antiquewhite;
+}
