@@ -22,6 +22,7 @@
 .arriba:hover{
   bottom:75px;
   right:50px;
+  cursor:pointer;
 }
 
 .body{
@@ -87,6 +88,7 @@
     transition-duration: 200ms;
     transition-timing-function: ease-out;
     transition-delay: 0s;
+    cursor:pointer;
   }
 
   .topnav-img{
@@ -117,6 +119,7 @@
     transition-duration: 200ms;
     transition-timing-function: ease-out;
     transition-delay: 0s;
+    cursor:pointer;
   }
   
   .topnav a.active {
@@ -311,6 +314,9 @@
     margin-right:60px;
 }
 
+.boton-editar,.boton-editar1,.boton-editar2,.boton-editar3:hover{
+  cursor:pointer;
+}
 
 
 
@@ -331,4 +337,71 @@
   margin-bottom: 2%;
   font-size: small;
   position:static
+}
+
+.boton-quitar,.boton-quitar1,.boton-quitar2,.boton-quitar3:hover{
+  cursor:pointer;
+}
+
+form{
+  background-image:url(./img/bg4.gif);
+  background-size:cover;
+  background-attachment:local;
+  width: 450px;
+  margin:auto;
+  padding: 10px 20px;
+  font-family:font_2;
+  box-sizing: border-box;
+  margin-top:20px;
+  margin-bottom: 80px;
+  border-radius: 7px;
+
+}
+
+.h2-form{
+  font-family: font_1;
+  text-align: center;
+  font-size: 30px;
+  color:antiquewhite;
+  -webkit-text-stroke: #050736 1px;
+
+
+}
+
+input, textarea{
+  width: 100%;
+  font-family:font_2;
+  margin-bottom: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+textarea{
+  min-height: 100px;
+  max-height: 200px;
+  max-width: 100%;
+
+}
+
+.boton-enviar{
+  width: 100%;
+  font-family: font_2;  
+  padding: 6px;
+  border: none;
+  background-color: rgb(203, 71, 255);
+  text-emphasis-color:  antiquewhite;
+  margin-right: 16px;
+  font-size: 17px;
+  border-radius: 8px;
+}
+
+.boton-enviar:hover{
+  cursor:pointer;
+}
+
+@media (max-width:450px) {
+  form{
+    width:100%;
+  }
 }

@@ -15,17 +15,16 @@
   
   
   .body{
-      
-      background: #151133;
+      width: 100%;
+      height:100%;
+      margin: 0 0;
       background: -moz-linear-gradient(top,  #151133 24%, #2e1b63 57%, #2e1b63 76%, #7966d7 99%);
       background: -webkit-linear-gradient(top,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
       background: linear-gradient(to bottom,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#151133', endColorstr='#7966d7',GradientType=0 );      
   }
-      
-  
 
-  
+
   
   .topnav {
     font-family: font_2;
@@ -69,13 +68,15 @@
       transition-duration: 200ms;
       transition-timing-function: ease-out;
       transition-delay: 0s;
+      cursor:pointer;
     }
   
     .topnav-img{
       width:6em;
       position:static;
       top:0%;
-      margin-right: 5px;
+      margin-right: 0px;
+      
   
   
     }
@@ -99,6 +100,7 @@
       transition-duration: 200ms;
       transition-timing-function: ease-out;
       transition-delay: 0s;
+      cursor:pointer;
     }
     
     .topnav a.active {

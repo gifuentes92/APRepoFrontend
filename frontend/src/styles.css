@@ -34,6 +34,7 @@
     transition-duration: 200ms;
     transition-timing-function: ease-out;
     transition-delay: 0s;
+    cursor:pointer;
 }
 
 
@@ -73,7 +74,7 @@
 
 
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (min-device-width : 320px) and (max-width: 1200px) {
     .pixellari{
       font-size: x-large; 
     }
@@ -82,32 +83,8 @@
       width: 90%;
       display: block;
       font-size:medium;
-      margin: 0 0 4% 6% ;
-      padding: 2% 8% 2% 8%;
-    }
-  
-    #parrafo {
-      width: 90%;
-      display: block;
-      font-size:medium;
-      margin: 0 0 4% 6% ;
-      padding: 2% 8% 2% 8%;
-    }
-  
-    #parrafo_2 {
-      width: 90%;
-      display: block;
-      font-size:medium;
-      margin: 0 0 4% 6% ;
-      padding: 2% 8% 2% 8%;
-    }
-  
-    #parrafo3 {
-      width: 90%;
-      display: block;
-      font-size:medium;
-      margin: 0 0 4% 6% ;
-      padding: 2% 8% 2% 8%;
+      margin: 0 16rem 3rem 3rem;
+      padding: 2rem 6rem 4rem 6rem;
     }
   
     .topnav{
@@ -141,3 +118,5 @@
       height:5em;
     }
   }
+
+ 

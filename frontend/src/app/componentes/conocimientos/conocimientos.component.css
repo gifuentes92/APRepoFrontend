@@ -5,7 +5,7 @@
     background-size:auto;
     background-repeat:repeat-x;
     background-position: center;
-    margin: 0 16rem 3rem 16rem;
+    margin: 0 10rem 3rem 10rem;
     padding: 2rem 8rem 4rem 8rem;
     border-radius: 10px;
     box-sizing: border-box;
@@ -24,3 +24,20 @@
   font-size:large;
   color:antiquewhite;
 }
+
+
+@media screen and (min-device-width : 320px) and (max-width: 1200px) {
+  .pixellari{
+    font-size: x-large; 
+  }
+
+  .parrafo {
+    width: 90%;
+    display: block;
+    font-size:medium;
+    margin: 0 16rem 3rem 3rem;
+    padding: 2rem 6rem 4rem 6rem;
+  }
+
+}
+
