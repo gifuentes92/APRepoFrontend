@@ -2,9 +2,7 @@
     position: static;
     text-size-adjust: medium;
     background-image:url(../conocimientos/assets/pixel.jpg);
-    background-size:auto;
-    background-repeat:repeat-x;
-    background-position: center;
+    background-size:contain;
     margin: 0 10rem 3rem 10rem;
     padding: 2rem 8rem 4rem 8rem;
     border-radius: 10px;

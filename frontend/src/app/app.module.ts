@@ -9,6 +9,7 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { ExtraComponent } from './componentes/extra/extra.component';
 import { FlechaComponent } from './componentes/flecha/flecha.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

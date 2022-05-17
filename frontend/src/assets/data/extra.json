@@ -1,0 +1,17 @@
+{
+    "extra":{
+        "habilidad":["Edición de imágenes","Edición de Video","Edición de Audio","Edición de sprites y pixelart"],
+        
+        "programa":[
+            "Adobe Photoshop",
+            "Adobe Premiere",
+            "Adobe After Effects",
+            "Audacity",
+            "Aseprite"
+        ],
+
+        "idiomas":["Inglés - B1 Intermedio","Francés - A1 Básico"]
+
+
+    }
+}

@@ -1,11 +1,13 @@
 .arriba{
-    position:fixed;
+    position: fixed;
     bottom:50px;
     right:70px;
     transition: .1s;
     width:6rem;
     height: 6rem;
-    z-index:-1
+  
+    
+   
   }
   
   .arriba:hover{
@@ -26,6 +28,7 @@
     }
   }
 
+  
   .show{
     z-index:10;
     animation: popup .3s, ease-in-out;

@@ -1,0 +1,16 @@
+{
+    "persona": 
+        {
+            "fullname":"Gabriela Isabel Fuentes",
+            "birthDay":"02/07/1992",
+            "aboutMe": "Team mom, druida gamer",
+            "mail": "gifuentes187@gmail.com",
+            "backImage":"",
+            "image":"/assets/img/pic.png",
+            "position":"Developer junior",
+            "location":"Buenos Aires (Argentina)"
+            
+        }
+    
+
+}

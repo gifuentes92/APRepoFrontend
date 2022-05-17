@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConocimientosService } from 'src/app/servicios/conocimientos.service';
 
 @Component({
   selector: 'app-conocimientos',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./conocimientos.component.css']
 })
 export class ConocimientosComponent implements OnInit {
+  conocimientos:any;
 
-  constructor() { }
+  constructor(private miServicio:ConocimientosService) { }
 
   ngOnInit(): void {
+    this.miServicio.obtenerDatosConocimientos().subscribe(data =>{
+      this.conocimientos=data["conocimientos"];
+    })
   }
 
 }

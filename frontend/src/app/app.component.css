@@ -14,113 +14,11 @@
   }
   
   
-  .body{
-      width: 100%;
-      height:100%;
-      margin: 0 0;
-      background: -moz-linear-gradient(top,  #151133 24%, #2e1b63 57%, #2e1b63 76%, #7966d7 99%);
-      background: -webkit-linear-gradient(top,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
-      background: linear-gradient(to bottom,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#151133', endColorstr='#7966d7',GradientType=0 );      
-  }
+
 
 
   
-  .topnav {
-    font-family: font_2;
-    
-      background: #2c1e63;
-    background: -moz-linear-gradient(top,  #2c1e63 0%, #352865 4%, #352865 9%, #43369d 29%, #43369d 58%, #562499 82%, #be88e2 100%);
-    background: -webkit-linear-gradient(top,  #2c1e63 0%,#352865 4%,#352865 9%,#43369d 29%,#43369d 58%,#562499 82%,#be88e2 100%);
-    background: linear-gradient(to bottom,  #2c1e63 0%,#352865 4%,#352865 9%,#43369d 29%,#43369d 58%,#562499 82%,#be88e2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c1e63', endColorstr='#be88e2',GradientType=0 );
   
-      
-      top:0%;
-      position:fixed;
-      width: -webkit-fill-available;
-      height: fit-content;
-      display: flow-root;
-    }
-    
-    .topnav a {
-      font-family: font_2;
-      align-self: right;
-      background-color:#7966d7;
-      color: white;
-      text-align: center;
-      padding: 12px 16px;
-      display: inline-block;
-      text-decoration: none;
-      font-size: 17px;
-      border-radius: 5%;
-      position: inherit;
-          top: 10px;
-      
-    }
-    .topnav a:hover {
-      font-family: font_2;
-      background-color: #6a36aa;
-      color: antiquewhite;
-      border-radius: 5px;
-      transition: all 200ms ease-out;
-      transition-property: all;
-      transition-duration: 200ms;
-      transition-timing-function: ease-out;
-      transition-delay: 0s;
-      cursor:pointer;
-    }
-  
-    .topnav-img{
-      width:6em;
-      position:static;
-      top:0%;
-      margin-right: 0px;
-      
-  
-  
-    }
-    .topnav-icono{
-      position: unset;
-      height: 2em;
-      top: 17%;
-      margin: 12px 8px 10px 0px;
-      padding-right: 10px;
-      bottom: 0%;
-      right: -80%;
-      float: right;
-    }
-    .topnav-icono:hover {
-      font-family: font_2;
-      background-color: #a865ff;
-      color: antiquewhite;
-      border-radius: 5px;
-      transition: all 200ms ease-out;
-      transition-property: all;
-      transition-duration: 200ms;
-      transition-timing-function: ease-out;
-      transition-delay: 0s;
-      cursor:pointer;
-    }
-    
-    .topnav a.active {
-      font-family: font_2;
-      background-color: #c35194;
-      color: white;
-      border-radius: 3px;
-    }
-    
-    .topnav input[type=text] {
-      font-family: font_2;
-      float: right;
-      padding: 6px;
-      border: none;
-      background-color: rgb(208, 183, 255);
-      text-decoration-color: antiquewhite;
-      margin-top: 8px;
-      margin-right: 16px;
-      font-size: 17px;
-    }
     
    
   
@@ -161,21 +59,11 @@
   }
   
   
- 
+ #down{
+   transform:translate-y(-5em);
+ }
   
-  .footer{
-    font-family:font_2;
-      font-size: 10;
-      
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background-color: #050736;
-      color: antiquewhite;
-      text-align: center;
-      opacity: 75%;
-      margin:0;
-  }
+  
   
   
 

@@ -1,9 +1,22 @@
-<div class="titulo"><p id="titulo">Gabriela Isabel Fuentes</p></div> 
+<div class="topnav">
+  <img class="topnav-img" src="../assets/img/APLogo.png">
+  <button type="button" class="btn">Login</button>
+  <a href="#down"><img class="topnav-icono" src="../assets/img//icons/GMail.png" ></a>
+  <a href="https://discord.gg/3cEYjjmg8V"><img class="topnav-icono" src="../assets/img/icons/discord.png"></a>
+  <a href="https://github.com/gifuentes92"><img class="topnav-icono" src="../assets/img/icons/git.png"></a>
+  <a href="https://t.me/gifuentes92"><img class="topnav-icono" src="../assets/img/icons/Telegram.png"></a> 
+ 
+</div>
+
+
+<div class="titulo"><p id="titulo">{{persona.fullname}}</p></div> 
   <button type="button" class="boton-editar1" onclick="cambiarNombre()">editar</button>
   <button type="button" class="boton-quitar1">eliminar</button> 
 
-  <img class="avatar" src="../assets/img/pic.png" alt="avatar">
-<div class="desc">Fullstack developer Jr. - Amante del té</div>
+  <img class="avatar" [src]=persona.image alt="avatar">
+<div class="desc">{{persona.position}} - {{persona.aboutMe}}
+
+</div>
 <button type="button" class="boton-editar2">editar</button>
 <button type="button" class="boton-quitar2">eliminar</button>
 <br>

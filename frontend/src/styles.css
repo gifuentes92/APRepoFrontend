@@ -1,15 +1,28 @@
 @font-face {
     font-family:font_1;
-    src: url(/frontend/src/assets/fonts/Vcr.ttf);
+    src: url(./assets/fonts/Vcr.ttf);
     font-style:normal;
     font-weight:normal;
   }
   
   @font-face {
     font-family:font_2;
-    src: url(/frontend/src/assets/fonts/Vcr.ttf);
+    src: url(./assets/fonts/Pixellari.ttf);
     font-style:normal;
     font-weight:normal;
+  }
+
+  .body{
+    display:block;
+    width: 100%;
+    height:100%;
+    margin: 0;
+    background: -moz-linear-gradient(top,  #151133 24%, #2e1b63 57%, #2e1b63 76%, #7966d7 99%);
+    background: -webkit-linear-gradient(top,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
+    background: linear-gradient(to bottom,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#151133', endColorstr='#7966d7',GradientType=0 );
+    left:0%;
+    overflow-x: hidden; 
   }
 
   .boton-editar1,.boton-editar2,.boton-editar3 {
@@ -109,14 +122,20 @@
   
     
   
-    .arriba{
-      position:fixed;
-      bottom:50px;
-      right:50px;
-      margin-right: 15px;
-      margin-top:50px;
-      height:5em;
-    }
+
   }
 
- 
+  .footer{
+    width:100%;
+    font-family:font_2;
+      font-size: 10;
+      
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #050736;
+      color: antiquewhite;
+      text-align: center;
+      opacity: 75%;
+      margin:0;
+  }

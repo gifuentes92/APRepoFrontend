@@ -1,0 +1,22 @@
+{
+"conocimientos":[
+         {
+        "soft":["SCRUM","Empatía","Foco en metas","Responsabilidad","Pragmatismo"],
+        "hard":["Arquitectura WEB distribuida (Frontend y Backend)",
+            "Git y Github",
+            "Bases de Datos, MySQL y JSON",
+           "Programación Orientada a Objetos",
+            "HTML, CSS",
+            "Javascript y TypeScript",
+            "Angular",
+            "Proceso de petición protocolo HTTP  (GET, POST, PUT)",
+            "Git y Github",
+            "Bases de Datos y JSON",
+            "Programación Orientada a Objetos ",
+            "Programador HTML, CSS y JS",
+            "Conceptos de programación Java Web",
+            "Framework Spring Boot"]
+        
+    }
+    ]
+    }
