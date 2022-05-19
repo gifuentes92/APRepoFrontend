@@ -8,6 +8,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 })
 export class EducacionComponent implements OnInit {
   educacion:any;
+  usuarioAutenticado:boolean=true; //deberia estar en false hasta login de usuario
   constructor(private miServicio:EducacionService) { }
 
   ngOnInit(): void {

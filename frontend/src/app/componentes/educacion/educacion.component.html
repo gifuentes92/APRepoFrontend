@@ -1,15 +1,12 @@
 <link rel="stylesheet" href="educacion.component.css">
 <div class="parrafo">
     <div ><h2 class="pixellari">Educación</h2></div>
-    <ul class="ul" id="parrafo_2">
-    <li>{{educacion[0].title}} <br> {{educacion[0].career}} <br> {{educacion[0].start}}-{{educacion[0].end}}</li>
-    <br>
-    <li>{{educacion[1].title}} <br>{{educacion[1].career}} <br> {{educacion[1].start}}-{{educacion[1].end}}</li>
-    <br>
-    <li>{{educacion[2].title}} <br>{{educacion[2].career}} <br> {{educacion[2].start}}-{{educacion[2].end}} </li>
-    <br>
-    <li>{{educacion[3].title}} <br>{{educacion[3].career}} <br>{{educacion[3].start}}-{{educacion[3].end}}</li>
+    <ul *ngFor= "let item of educacion"class="ul" id="parrafo_2">
+    <li>{{item.title}} <br> {{item.career}} <br> {{item.start}}-{{item.end}}</li>
+   
   </ul>
-  <button type="button" class="boton-editar3">editar</button>
-  <button type="button" class="boton-quitar3">eliminar</button>
+  <button type="button" class="boton-editar3" data-toggle="modal" data-target="#myModal">editar</button>
+  <button  type="button" class="boton-quitar3">eliminar</button>
   </div>
+
+
