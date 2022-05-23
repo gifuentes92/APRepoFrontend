@@ -7,10 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class ExtraService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+  
+   }
 
   obtenerExtraConocimientos():Observable<any>{
     return this.http.get('./assets/data/extra.json');
    }
+
 
 }

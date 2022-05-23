@@ -1,30 +1,26 @@
 <div class="parrafo">
     <div><h2 class="pixellari">Habilidades</h2></div>
-    <ul class="ul" id="parrafo">
-      <li>{{conocimientos[0].soft[0]}}</li>
-      <li>{{conocimientos[0].soft[1]}}</li> 
-      <li>{{conocimientos[0].soft[2]}}</li> 
-      <li>{{conocimientos[0].soft[3]}}</li> 
-      <li>{{conocimientos[0].soft[4]}}</li> 
-      <br>
-      <li>{{conocimientos[0].hard[0]}}</li> 
-      <li>{{conocimientos[0].hard[1]}}</li> 
-      <li>{{conocimientos[0].hard[2]}}</li>
-      <li>{{conocimientos[0].hard[3]}}</li> 
-      <li>{{conocimientos[0].hard[4]}}</li> 
-      <li>{{conocimientos[0].hard[5]}}</li> 
-      <li>{{conocimientos[0].hard[6]}}</li> 
-      <li>{{conocimientos[0].hard[7]}}</li> 
-      <li>{{conocimientos[0].hard[8]}}</li> 
-      <li>{{conocimientos[0].hard[9]}}</li> 
-      <li>{{conocimientos[0].hard[10]}}</li>
-      <li>{{conocimientos[0].hard[11]}}</li> 
-      <li>{{conocimientos[0].hard[12]}}</li> 
-      <li>{{conocimientos[0].hard[13]}}</li>  
-     
-
-     
-  </ul>
+    <ul *ngFor ="let item of conocimientos;" class="ul" id="parrafo">
+      <li>{{item.soft[0]}}</li>
+      <li>{{item.soft[1]}}</li>
+      <li>{{item.soft[2]}}</li>
+      <li>{{item.soft[3]}}</li>
+      <li>{{item.soft[4]}}</li>
+      <li>{{item.hard[0]}}</li>
+      <li>{{item.hard[1]}}</li>
+      <li>{{item.hard[2]}}</li>
+      <li>{{item.hard[3]}}</li>
+      <li>{{item.hard[4]}}</li>
+      <li>{{item.hard[5]}}</li>
+      <li>{{item.hard[6]}}</li>
+      <li>{{item.hard[7]}}</li>
+      <li>{{item.hard[8]}}</li>
+      <li>{{item.hard[9]}}</li>
+      <li>{{item.hard[10]}}</li>
+      <li>{{item.hard[11]}}</li>
+      <li>{{item.hard[12]}}</li>
+      
+    </ul>
   <button type="button" class="boton-editar3" onclick="cambiarInfoAEditar()" >editar</button>
   <button type="button" class="boton-quitar3">eliminar</button>
   </div>

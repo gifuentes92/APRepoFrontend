@@ -1,6 +1,6 @@
 <div class="topnav">
-  <img class="topnav-img" src="../assets/img/APLogo.png">
-  <button type="button" class="btn">Login</button>
+  <img class="topnav-img"  src="../assets/img/APLogo.png">
+  <button type="button" class="btnn">Login</button>
   <a href="#down"><img class="topnav-icono" src="../assets/img//icons/GMail.png" ></a>
   <a href="https://discord.gg/3cEYjjmg8V"><img class="topnav-icono" src="../assets/img/icons/discord.png"></a>
   <a href="https://github.com/gifuentes92"><img class="topnav-icono" src="../assets/img/icons/git.png"></a>
@@ -10,13 +10,36 @@
 
 
 <div class="titulo"><p id="titulo">{{persona.fullname}}</p></div> 
-  <button type="button" class="boton-editar1" onclick="cambiarNombre()">editar</button>
-  <button type="button" class="boton-quitar1">eliminar</button> 
+  <button type="button" class="boton-editar1" data-bs-toggle="modal" data-bs-target="#exampleModal">editar</button>
+  <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#exampleModal">eliminar</button> 
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
 
   <img class="avatar" [src]=persona.image alt="avatar">
 <div class="desc">{{persona.position}} - {{persona.aboutMe}}
 
 </div>
-<button type="button" class="boton-editar2">editar</button>
-<button type="button" class="boton-quitar2">eliminar</button>
+<button type="button" class="boton-editar2" data-bs-toggle="modal" data-bs-target="#exampleModal">editar</button>
+<button type="button" class="boton-quitar2" data-bs-toggle="modal" data-bs-target="#exampleModal">eliminar</button>
 <br>
+

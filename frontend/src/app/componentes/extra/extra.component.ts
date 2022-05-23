@@ -9,6 +9,7 @@ import { ExtraService } from 'src/app/servicios/extra.service';
 })
 export class ExtraComponent implements OnInit {
   extra:any;
+ 
 
   constructor(private miServicio:ExtraService) { }
 
@@ -17,6 +18,9 @@ export class ExtraComponent implements OnInit {
       console.log(data);
       this.extra=data["extra"];
     })
+
+   
+
   }
 
 }

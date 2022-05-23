@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 
 @Component({
@@ -9,12 +10,18 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
 export class EducacionComponent implements OnInit {
   educacion:any;
   usuarioAutenticado:boolean=true; //deberia estar en false hasta login de usuario
-  constructor(private miServicio:EducacionService) { }
+
+  
+  constructor(private miServicio:EducacionService, private modalService:NgbModal) { }
 
   ngOnInit(): void {
     this.miServicio.obtenerDatosEducacion().subscribe(data =>{
       this.educacion=data["educacion"];
     })
+
+    
+
   }
 
+  
 }

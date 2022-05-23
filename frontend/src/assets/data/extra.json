@@ -1,17 +1,25 @@
 {
-    "extra":{
-        "habilidad":["Edición de imágenes","Edición de Video","Edición de Audio","Edición de sprites y pixelart"],
+    "extra":[
+
+        {"skill":"Edición de imagenes",
+        "programa":"Adobe photoshop"
+        },
         
-        "programa":[
-            "Adobe Photoshop",
-            "Adobe Premiere",
-            "Adobe After Effects",
-            "Audacity",
-            "Aseprite"
-        ],
+        
+        {"skill":"Edición de video",
+            "programa":"Adobe premiere y Adobe After effects"},
 
-        "idiomas":["Inglés - B1 Intermedio","Francés - A1 Básico"]
+            
+        {"skill":"Edición de audio",
+            "programa":"Audacity" },
+
+            
+        {"skill":"Edición de sprites y pixelart",
+            "programa":"Aseprite"}
 
 
-    }
-}
+        
+
+
+        ]
+ }

@@ -1,14 +1,14 @@
 <link rel="stylesheet" href="./extra.component.css">
 <div class="parrafo"><div><h2 class="pixellari">Conocimientos Extra</h2></div>
 <ul class="ul" id="parrafo_3">
-  <li>{{extra.habilidad[0]}} en {{extra.programa[0]}}</li>
-  <li>{{extra.habilidad[1]}} en {{extra.programa[1]}} y {{extra.programa[2]}}</li>
-	<li>{{extra.habilidad[2]}} en {{extra.programa[3]}}</li>
-	<li>{{extra.habilidad[3]}} en {{extra.programa[4]}}</li>
-  <p class="pixellari2">Idiomas</p>
-  <li>{{extra.idiomas[0]}}</li>
-  <li>{{extra.idiomas[1]}}</li>
+
+  
+  <li *ngFor ="let item of extra">{{item.skill}} en {{item.programa}}</li>
 </ul>
+
+
+
+
 <button type="button" class="boton-editar3">editar</button>
 <button type="button" class="boton-quitar3">eliminar</button>
 </div>
