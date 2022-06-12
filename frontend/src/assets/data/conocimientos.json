@@ -1,8 +1,7 @@
 {
-"conocimientos":[
+"conocimientos":
          {
-        "soft":["SCRUM","Empatía","Foco en metas","Responsabilidad","Pragmatismo"],
-        "hard":["Arquitectura WEB distribuida (Frontend y Backend)",
+        "skill":["SCRUM","Empatía","Foco en metas","Responsabilidad","Pragmatismo","Arquitectura WEB distribuida (Frontend y Backend)",
             "Git y Github",
             "Bases de Datos, MySQL y JSON",
            "Programación Orientada a Objetos",
@@ -17,5 +16,5 @@
             "Framework Spring Boot"]
 
     }
-    ]
+    
     }

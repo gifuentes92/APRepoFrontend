@@ -12,6 +12,7 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IdiomasComponent } from './componentes/idiomas/idiomas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -32,7 +33,8 @@ import { IdiomasComponent } from './componentes/idiomas/idiomas.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

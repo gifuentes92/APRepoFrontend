@@ -12,6 +12,6 @@ export class HeaderService {
   }
 
   obtenerDatosPersona():Observable<any>{
-    return this.http.get('./assets/data/persona.json');
+    return this.http.get("./assets/data/persona.json");
   }
 }
