@@ -10,7 +10,7 @@
 
 
 <div class="titulo"><p id="titulo">{{persona.fullname}}</p></div> 
-  <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarNombre">editar</button>
+  <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarNombre" (click)="mostrarDatosEncabezado()">Editar</button>
 
  <img class="avatar" [src]=persona.image alt="avatar">
 <div class="desc">{{persona.position}} - {{persona.aboutMe}}</div>
@@ -30,7 +30,7 @@
       <div class="modal-body">
        <form [formGroup]="form">
         <label for="fullname" class="form-text">Nombre y apellido</label>
-        <input type="text" name="fullname" id="fullname" placeholder="Ingrese nombre y apellido" formControlName="fullname">
+       <div> <input type="text" name="fullname" id="fullname" placeholder="Ingrese nombre y apellido" formControlName="fullname">
           <div *ngIf="fullname?.invalid &&  fullname?.touched">
           <div *ngIf="fullname?.errors?.['required']" class="form-alert">
            Se necesita un nombre y apellido.
@@ -38,7 +38,8 @@
           <div *ngIf="fullname?.errors?.['minlength']"class="form-alert">
           El nombre y apellido debe ser de al menos 4 caracteres.
          </div>
-        </div>        
+        </div>   
+      </div>     
         <label for="fullname" class="form-text">Posición</label>
        <input type="text" name="position" id="position" placeholder="Ingrese posición" formControlName="position">
        <div *ngIf="position?.invalid && position?.touched">
@@ -50,7 +51,7 @@
        </div>
       </div>
        <label for="aboutMe" class="form-text">Descripción</label>
-       <input type="text" name="aboutMe" id="aboutMe" placeholder="Ingrese descripción"formControlName="aboutMe"></form>
+       <input type="text" name="aboutMe" id="aboutMe" placeholder="Ingrese descripción"formControlName="aboutMe">
        <div *ngIf="aboutMe?.invalid &&aboutMe?.touched">
        <div *ngIf="aboutMe?.errors?.['required']" class="form-alert">
          Se requiere una descripción.
@@ -59,6 +60,7 @@
          La descripción debe ser de hasta 50 caracteres.
         </div> 
       </div>
+    </form>
     </div> 
       <div class="modal-footer">
         <button type="button" id="cerrarModal" class="boton-quitar1" (click)="cerrarModalData()" data-bs-dismiss="modal">Cerrar</button>

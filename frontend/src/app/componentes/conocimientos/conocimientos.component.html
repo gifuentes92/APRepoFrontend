@@ -4,6 +4,38 @@
       <li *ngFor="let item of conocimientos.skill">{{item}}</li>
       
     </ul>
-  <button type="button" class="boton-editar3" onclick="cambiarInfoAEditar()" >editar</button>
-  <button type="button" class="boton-quitar3">eliminar</button>
+  <button type="button" class="boton-quitar3" data-bs-toggle="modal" data-bs-target="#modalEditarSkill">Editar</button>
+  
+  </div>
+
+  <div class="modal fade" id="modalEditarSkill" tabindex="-1" role="dialog" aria-labelledby="modalEditarSkillLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-fondo">
+        <div class="modal-header">
+          <h5 class="modal-titulo" id="modalEditarSkillLabel">Editar</h5>
+          <button type="button" class="boton-quitar1" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="form">
+            <div><label for="Conocimiento" class="form-text">Conocimientos</label>
+              <input type="text" name="skill" id="skill" placeholder="Ingrese Habilidad" formControlName="skill">
+              <div *ngIf="skill?.invalid && skill?.touched">
+                <div *ngIf="skill?.errors?.['maxLength']"class="form-alert">
+                 El dato ingresado debe ser de hasta 50 caracteres.
+                </div>
+                <div *ngIf="skill?.errors?.['minLength']" class="form-alert">
+                El dato ingresado debe tener al menos 3 caracteres.
+                </div>
+             </div>
+            </div>
+          </form>            
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cerrarModal" class="boton-quitar3"  data-bs-dismiss="modal" (click)="cerrarModalSkill()">Cerrar</button>
+          <button type="button" class="boton-editar3" (click)=" guardarSkill()">Guardar</button>
+        </div>
+      </div>
+    </div>
   </div>

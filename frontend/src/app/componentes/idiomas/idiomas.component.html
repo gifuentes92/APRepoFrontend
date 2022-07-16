@@ -8,6 +8,42 @@
 
 
 
-<button type="button" class="boton-editar3">editar</button>
-<button type="button" class="boton-quitar3">eliminar</button>
+<button type="button" class="boton-quitar3"data-bs-toggle="modal" data-bs-target="#modalEditarIdiomas">Editar</button>
+</div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+<div class="modal fade" id="modalEditarIdiomas" tabindex="-1" role="dialog" aria-labelledby="modalEditarIdiomasLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-fondo">
+      <div class="modal-header">
+        <h5 class="modal-titulo" id="modalEditarEducacionLabel">Editar</h5>
+        <button type="button" class="boton-quitar1" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div><label for="idiomas" class="form-text">Idioma</label>
+            <input type="text" name="idiomas" id="idiomas" placeholder="Ingrese idioma">
+          </div>
+          <div><label for="nivel" class="form-text">Nivel</label>
+          <input type="text" name="nivel" id="nivel" placeholder="Ingrese nivel">
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModal" class="boton-quitar3"  data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="boton-editar3">Guardar</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -9,6 +9,39 @@
 
 
 
-<button type="button" class="boton-editar3">editar</button>
-<button type="button" class="boton-quitar3">eliminar</button>
+<button type="button" class="boton-quitar3"data-bs-toggle="modal" data-bs-target="#modalEditarExtra">Editar</button>
+
+</div>
+
+
+
+ 
+
+
+
+
+<div class="modal fade" id="modalEditarExtra" tabindex="-1" role="dialog" aria-labelledby="modalEditarExtraLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-fondo">
+      <div class="modal-header">
+        <h5 class="modal-titulo" id="modalEditarEducacionLabel">Editar</h5>
+        <button type="button" class="boton-quitar1" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div><label for="skill" class="form-text">Habilidad</label>
+            <input type="text" name="skill" id="skill" placeholder="Ingrese habilidad">
+          </div>
+          <div><label for="programa" class="form-text">Programa</label>
+          <input type="text" name="programa" id="programa" placeholder="Ingrese programa">
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModal" class="boton-quitar3"  data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="boton-editar3">Guardar</button>
+      </div>
+    </div>
+  </div>
 </div>

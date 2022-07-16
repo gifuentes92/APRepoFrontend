@@ -1,23 +1,27 @@
 {
     "educacion":[ 
         {
+        "id":4,
         "school": "Instituto Nacional de Tecnología Industrial", 
         "title":"Programador Fullstack",
         "career":"#YoProgramo", 
         "score":"" ,
         "start":"2020",
-        "end":"2022"},
+        "end":"2022"
+    },
 
     {
+        "id":3,
         "school": "Udemy", 
         "title":"Programador Javascript",
         "career":"Master en JavaScript, jQuery, Angular, NodeJS - Victor Robles", 
         "score":"" ,
         "start":"2021",
-        "end":"2023"
+        "end":""
     },
 
-    {
+    {   
+        "id":2,
         "school": "Udemy", 
         "title":"Programador HTML, CSS y JS",
         "career":"Web Developer Course HTML CSS JavaScript - Laurence Svekis", 
@@ -26,7 +30,8 @@
         "end":"2021"
     },
 
-    {
+    {   
+        "id":1,
         "school": "Escuela Educación Media N° 16", 
         "title":"Secundario",
         "career":"Humanidades y Ciencias Sociales", 

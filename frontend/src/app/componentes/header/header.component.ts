@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { toJSDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-calendar';
+import { Persona } from 'src/app/entidades/persona';
 import { HeaderService } from 'src/app/servicios/header.service';
 
 
@@ -46,21 +46,43 @@ form:FormGroup;
 
   guardarNombre(){
     if(this.form.valid){
-    alert("Cambios guardados");
-    this.form.reset();
-    this.form.markAsPristine();
-    document.getElementById("cerrarModal")?.click();
+     
+      let fullname =this.form.get("fullname")?.value;
+      let position =this.form.get("position")?.value;
+      let aboutMe =this.form.get("aboutMe")?.value;
+      
+    
+      let personaEditar = new Persona(fullname,aboutMe,position);
+      this.miServicio.editarDatosPersona(personaEditar).subscribe({
+        next: (data) => {
+          this.persona=personaEditar;
+          this.form.reset();
+          this.form.markAsPristine();
+           document.getElementById("cerrarModal")?.click();
+        },
+        error: (error) => {
+          alert("No se pudo actualizar el registro, por favor intente nuevamente.");
+        }
+      })
+      
+     
     }
     else
-    {
-    alert("Hay errores, por favor revise los datos");
-    this.form.markAllAsTouched();
-   }
+      {
+     alert("Hay errores, por favor revise los datos");
+      this.form.markAllAsTouched();
+    }
   }
   
   cerrarModalData(){
     this.form.reset();
     this.form.markAsPristine();
+  }
+
+  mostrarDatosEncabezado(){
+    this.form.get("fullname")?.setValue(this.persona.fullname);
+    this.form.get("position")?.setValue(this.persona.position);
+    this.form.get("aboutMe")?.setValue(this.persona.aboutMe);
   }
 }
 
