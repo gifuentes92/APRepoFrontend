@@ -32,7 +32,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form [formGroup]="form">
+        <form group="form">
           <div><label for="school" class="form-text">Institución educativa</label>
             <input type="text" name="school" id="school" placeholder="Ingrese Institución" formControlName="school">
             <div *ngIf="school?.invalid && school?.touched">

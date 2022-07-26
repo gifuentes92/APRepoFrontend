@@ -28,7 +28,7 @@
         </button>
       </div>
       <div class="modal-body">
-       <form [formGroup]="form">
+       <form group="form">
         <label for="fullname" class="form-text">Nombre y apellido</label>
        <div> <input type="text" name="fullname" id="fullname" placeholder="Ingrese nombre y apellido" formControlName="fullname">
           <div *ngIf="fullname?.invalid &&  fullname?.touched">

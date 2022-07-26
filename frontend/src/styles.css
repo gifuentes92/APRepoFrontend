@@ -15,11 +15,18 @@
   }
 
   .body{
-    display:block;
+    background-position: center;
+    background-repeat: no-repeat;
     background: -moz-linear-gradient(top,  #151133 24%, #2e1b63 57%, #2e1b63 76%, #7966d7 99%);
     background: -webkit-linear-gradient(top,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
     background: linear-gradient(to bottom,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#151133', endColorstr='#7966d7',GradientType=0 );
+    overflow-x: hidden;
+    margin: 0;
+    
+    padding-bottom: 40px;
+    min-height: 100vh;
+    width: 100%;
+    position:relative;
   }
 
   .boton-editar1,.boton-editar2,.boton-editar3 {
@@ -127,12 +134,19 @@
       font-size: 18px;
       
       left: 0;
-      bottom: 0;
+    
       width: 100%;
       background-color: #050736;
       color: antiquewhite;
       text-align: center;
       opacity: 75%;
       margin:0;
+
+      bottom: 0;
+      width: 100%;
+      height: 1.5em;
+      position:absolute;
   }
  
+
+  

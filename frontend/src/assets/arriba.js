@@ -10,7 +10,7 @@ mybutton = document.getElementsByClassName('arriba');
    
   }
 
-  var scrollToTop = window.setInterval(function() {
+ var scrollToTop = window.setInterval(function() {
     var pos = window.pageYOffset;
     if ( pos > 100 ) {
       document.querySelector(".arriba").style.display ="block";
@@ -20,7 +20,7 @@ mybutton = document.getElementsByClassName('arriba');
 })
 
  
-/*// Mostrar/ocultar elemento anterior
+/* // Mostrar/ocultar elemento anterior
 console.log(onscroll);
  document.onscroll = function(){
     console.log(document.document.scrolltop);  

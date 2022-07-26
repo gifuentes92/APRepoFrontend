@@ -13,6 +13,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IdiomasComponent } from './componentes/idiomas/idiomas.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './componentes/login/login.component';
+import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 
 
 
@@ -27,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FlechaComponent,
     ContactoComponent,
     IdiomasComponent,
+    LoginComponent,
+    PortfolioComponent
     
   ],
   imports: [

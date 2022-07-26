@@ -18,7 +18,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form [formGroup]="form">
+          <form group="form">
             <div><label for="Conocimiento" class="form-text">Conocimientos</label>
               <input type="text" name="skill" id="skill" placeholder="Ingrese Habilidad" formControlName="skill">
               <div *ngIf="skill?.invalid && skill?.touched">
