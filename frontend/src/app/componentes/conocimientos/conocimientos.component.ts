@@ -21,6 +21,7 @@ userAuntenticado:boolean=true; //debería ser false
        return this.form.get("skill");
        }
 
+
        
   ngOnInit(): void {
     this.miServicio.obtenerDatosConocimientos().subscribe(data =>{
@@ -32,11 +33,12 @@ userAuntenticado:boolean=true; //debería ser false
   guardarSkill(){
     if(this.form.valid){
      
-      let skill =this.form.get("fullname")?.value;
+      let skill =this.form.get("skill")?.value;
+      let idSkill=this.form.get("idSkill")?.value;
     
       
     
-      let skillEditar = new conocimientos(skill);
+      let skillEditar = new conocimientos(skill,idSkill);
       this.miServicio.editarDatosConocimientos(skillEditar).subscribe({
         next: (data) => {
           this.conocimientos=skillEditar;

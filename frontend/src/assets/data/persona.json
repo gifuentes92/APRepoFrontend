@@ -1,16 +1,13 @@
 {
     "persona": 
-        {
-            "fullname":"Gabriela Isabel Fuentes",
-            "birthDay":"02/07/1992",
-            "aboutMe": "Team mom, druida gamer",
-            "mail": "gifuentes187@gmail.com",
-            "backImage":"",
-            "image":"/assets/img/pic.png",
-            "position":"Developer junior",
-            "location":"Buenos Aires (Argentina)"
-            
-        }
-    
+    {
+        "nombre":"Gabriela Isabel",
+        "apellido":"Fuentes",
+        "fecha_nacimiento":"1992-07-03",
+        "acerca_de": "Cocinera profesional",
+        "email": "gifuentes187@gmail.com",
+        "urlfoto":"https://img001.prntscr.com/file/img001/kpR_wA5oTxe4_fNzxzvD9Q.png",
+        "puesto":"Developer junior"
+    }
 
 }

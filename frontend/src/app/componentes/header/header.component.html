@@ -9,11 +9,11 @@
 </div>
 
 
-<div class="titulo"><p id="titulo">{{persona.fullname}}</p></div> 
+<div class="titulo"><p id="titulo">{{persona.nombre}} {{persona.apellido}}</p></div> 
   <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarNombre" (click)="mostrarDatosEncabezado()">Editar</button>
 
- <img class="avatar" [src]=persona.image alt="avatar">
-<div class="desc">{{persona.position}} - {{persona.aboutMe}}</div>
+ <img class="avatar" [src]=persona.urlfoto alt="avatar">
+<div class="desc">{{persona.puesto}} - {{persona.acerca_de}}</div>
 
 
 
@@ -29,34 +29,34 @@
       </div>
       <div class="modal-body">
        <form group="form">
-        <label for="fullname" class="form-text">Nombre y apellido</label>
-       <div> <input type="text" name="fullname" id="fullname" placeholder="Ingrese nombre y apellido" formControlName="fullname">
-          <div *ngIf="fullname?.invalid &&  fullname?.touched">
-          <div *ngIf="fullname?.errors?.['required']" class="form-alert">
+        <label for="nombre" class="form-text">Nombre y apellido</label>
+       <div> <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre y apellido" formControlName="nombre">
+          <div *ngIf="nombre?.invalid &&  nombre?.touched">
+          <div *ngIf="nombre?.errors?.['required']" class="form-alert">
            Se necesita un nombre y apellido.
           </div>
-          <div *ngIf="fullname?.errors?.['minlength']"class="form-alert">
+          <div *ngIf="nombre?.errors?.['minlength']"class="form-alert">
           El nombre y apellido debe ser de al menos 4 caracteres.
          </div>
         </div>   
       </div>     
-        <label for="fullname" class="form-text">Posición</label>
-       <input type="text" name="position" id="position" placeholder="Ingrese posición" formControlName="position">
-       <div *ngIf="position?.invalid && position?.touched">
-        <div *ngIf="position?.errors?.['required']" class="form-alert">
+        <label for="nombre" class="form-text">Posición</label>
+       <input type="text" name="puesto" id="puesto" placeholder="Ingrese posición" formControlName="puesto">
+       <div *ngIf="puesto?.invalid && puesto?.touched">
+        <div *ngIf="puesto?.errors?.['required']" class="form-alert">
          Se necesita una posición.
         </div>
-        <div *ngIf="position?.errors?.['minlength']"class="form-alert">
+        <div *ngIf="puesto?.errors?.['minlength']"class="form-alert">
         La posición debe ser de al menos 4 caracteres.
        </div>
       </div>
-       <label for="aboutMe" class="form-text">Descripción</label>
-       <input type="text" name="aboutMe" id="aboutMe" placeholder="Ingrese descripción"formControlName="aboutMe">
-       <div *ngIf="aboutMe?.invalid &&aboutMe?.touched">
-       <div *ngIf="aboutMe?.errors?.['required']" class="form-alert">
+       <label for="acerca_de" class="form-text">Descripción</label>
+       <input type="text" name="acerca_de" id="acerca_de" placeholder="Ingrese descripción"formControlName="acerca_de">
+       <div *ngIf="acerca_de?.invalid &&acerca_de?.touched">
+       <div *ngIf="acerca_de?.errors?.['required']" class="form-alert">
          Se requiere una descripción.
          </div>
-        <div *ngIf="aboutMe?.errors?.['maxlength']"class="form-alert">
+        <div *ngIf="acerca_de?.errors?.['maxlength']"class="form-alert">
          La descripción debe ser de hasta 50 caracteres.
         </div> 
       </div>

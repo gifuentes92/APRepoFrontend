@@ -1,0 +1,49 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "fullname": "Gabriela Fuentes",
+      "birthDay": "Frontend Developer junior",
+      "aboutMe": "Ex cocinera profesional",
+      "id": 2
+    },
+    {
+      "fullname": "Gabriela Fuentes",
+      "birthDay": "Developer Frontend Junior",
+      "aboutMe": "Ex cocinera profesional",
+      "id": 3
+    },
+    {
+      "fullname": "Gabriela Fuentes",
+      "birthDay": "Frontend Developer",
+      "aboutMe": "Team mom, druida gamer",
+      "id": 4
+    },
+    {
+      "fullname": "Gabriela Isabel Fuentes",
+      "aboutMe": "Team mom, druida gamer",
+      "position": "Frontend Developer junior",
+      "id": 5
+    },
+    {
+      "fullname": "Gabriela Fuentes",
+      "aboutMe": "Ex Cocinera profesional",
+      "position": "Frontend Developer junior",
+      "id": 6
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

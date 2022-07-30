@@ -13,33 +13,52 @@ import { HeaderService } from 'src/app/servicios/header.service';
 
 
 export class HeaderComponent implements OnInit {
-persona:any;
+persona!:Persona;
 userAuntenticado:boolean=true;//deberia ser false
 form:FormGroup;
   constructor(private miServicio:HeaderService, private miFormBuild:FormBuilder) {
     this.form=this.miFormBuild.group({
-      fullname:['',[Validators.required,Validators.minLength(4)]],
-      position:['',[Validators.required, Validators.minLength(4)]],
-      aboutMe:['',[Validators.required, Validators.maxLength(50)]]
+      nombre:['',[Validators.required,Validators.minLength(4)]],
+      apellido:['',[Validators.required,Validators.minLength(4)]],
+      urlfoto:['https://',[Validators.required, Validators.pattern("https?://.+")]],
+      puesto:['',[Validators.required, Validators.minLength(4)]],
+      acerca_de:['',[Validators.required, Validators.maxLength(50)]]
     });
   
    }
  
-   get fullname(){
-      return this.form.get("fullname");
+   get nombre(){
+      return this.form.get("nombre");
     }
 
-    get position(){
-      return this.form.get("position");
+    get apellido(){
+      return this.form.get("apellido");
     }
 
-    get aboutMe(){
-      return this.form.get("aboutMe");
+    get fecha_nacimiento(){
+      return this.form.get("fecha_nacimiento");
     }
+
+    get urlfoto(){
+      return this.form.get("urlfoto");
+    }
+
+    get puesto(){
+      return this.form.get("puesto");
+    }
+
+    get acerca_de(){
+      return this.form.get("acerca_de");
+    }
+    
+    get email(){
+      return this.form.get("email");
+    }
+
 
   ngOnInit(): void {
-    this.miServicio.obtenerDatosPersona().subscribe(data =>{
-      this.persona=data["persona"];
+    this.miServicio.obtenerDatosPersona(1).subscribe(data =>{
+      this.persona=data;
       console.log(data);
     })
   }
@@ -47,12 +66,15 @@ form:FormGroup;
   guardarNombre(){
     if(this.form.valid){
      
-      let fullname =this.form.get("fullname")?.value;
-      let position =this.form.get("position")?.value;
-      let aboutMe =this.form.get("aboutMe")?.value;
+      let id=this.form.get("id")?.value;
+      let nombre =this.form.get("nombre")?.value;
+      let apellido= this.form.get("apellido")?.value;
+      let puesto =this.form.get("puesto")?.value;
+      let fecha_nacimiento=this.form.get("fecha_nacimiento")?.value;
+      let acerca_de =this.form.get("acerca_de")?.value;
       
-    
-      let personaEditar = new Persona(fullname,aboutMe,position);
+      
+      let personaEditar = new Persona(id,nombre,apellido,puesto,fecha_nacimiento,acerca_de,puesto);
       this.miServicio.editarDatosPersona(personaEditar).subscribe({
         next: (data) => {
           this.persona=personaEditar;
@@ -80,9 +102,9 @@ form:FormGroup;
   }
 
   mostrarDatosEncabezado(){
-    this.form.get("fullname")?.setValue(this.persona.fullname);
-    this.form.get("position")?.setValue(this.persona.position);
-    this.form.get("aboutMe")?.setValue(this.persona.aboutMe);
+    this.form.get("nombre")?.setValue(this.persona.nombre);
+    this.form.get("puesto")?.setValue(this.persona.puesto);
+    this.form.get("acerca_de")?.setValue(this.persona.acerca_de);
   }
 }
 

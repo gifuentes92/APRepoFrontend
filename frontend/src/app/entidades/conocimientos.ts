@@ -1,8 +1,12 @@
+
+
 export class conocimientos{
-    skill:string;
+    idSkill:number;
+    skill:String;
 
 
-constructor(skill:string){
+constructor(idSkill:number,skill:string){
     this.skill=skill;
+    this.idSkill=idSkill;
 }
 }
