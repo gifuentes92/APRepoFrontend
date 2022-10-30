@@ -1,7 +1,7 @@
 <div class="parrafo">
     <div><h2 class="pixellari">Habilidades</h2></div>
     <ul  class="ul"   id="parrafo">
-      <li *ngFor="let item of conocimientos.skill">{{item}}</li>
+      <li *ngFor="let item of Skill.skill">{{item}}</li>
       
     </ul>
   <button type="button" class="boton-quitar3" data-bs-toggle="modal" data-bs-target="#modalEditarSkill">Editar</button>
@@ -19,7 +19,7 @@
         </div>
         <div class="modal-body">
           <form group="form">
-            <div><label for="Conocimiento" class="form-text">Conocimientos</label>
+            <div><label for="skill" class="form-text">Conocimientos</label>
               <input type="text" name="skill" id="skill" placeholder="Ingrese Habilidad" formControlName="skill">
               <div *ngIf="skill?.invalid && skill?.touched">
                 <div *ngIf="skill?.errors?.['maxLength']"class="form-alert">

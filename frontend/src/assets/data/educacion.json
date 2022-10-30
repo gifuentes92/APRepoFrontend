@@ -1,43 +1,37 @@
 {
     "educacion":[ 
-        {
-        "id":4,
-        "school": "Instituto Nacional de Tecnología Industrial", 
-        "title":"Programador Fullstack",
-        "career":"#YoProgramo", 
-        "score":"" ,
-        "start":"2020",
-        "end":"2022"
-    },
+ 
 
     {
-        "id":3,
-        "school": "Udemy", 
-        "title":"Programador Javascript",
-        "career":"Master en JavaScript, jQuery, Angular, NodeJS - Victor Robles", 
-        "score":"" ,
-        "start":"2021",
-        "end":""
+        "id": 1,
+        "titulo": "Nivel Secundario",
+        "institucion": "Escuela Educación Media N° 16",
+        "curso": "Humanidades y Ciencias Sociales",
+        "inicio": 2007,
+        "fin": 2010
     },
-
-    {   
-        "id":2,
-        "school": "Udemy", 
-        "title":"Programador HTML, CSS y JS",
-        "career":"Web Developer Course HTML CSS JavaScript - Laurence Svekis", 
-        "score":"" ,
-        "start":"2020",
-        "end":"2021"
+    {
+        "id": 2,
+        "titulo": "Programador HTML, CSS y JS",
+        "institucion": "Udemy",
+        "curso": "Web Developer Course HTML CSS JavaScript - Laurence Svekis",
+        "inicio": 2020,
+        "fin": 2021
     },
-
-    {   
-        "id":1,
-        "school": "Escuela Educación Media N° 16", 
-        "title":"Secundario",
-        "career":"Humanidades y Ciencias Sociales", 
-        "score":"87" ,
-        "start":"2007",
-        "end":"2010"
+    {
+        "id": 3,
+        "titulo": "Programador Javascript",
+        "institucion": "Udemy",
+        "curso": "Master en JavaScript, jQuery, Angular, NodeJS - Victor Robles",
+        "inicio": 2021,
+        "fin": null
+    },
+    {
+        "id": 4,
+        "titulo": "Programador Fullstack",
+        "institucion": "Instituto Nacional de Tecnología Industrial",
+        "curso": "#YoProgramo",
+        "inicio": 2020,
+        "fin": 2022
     }
-]
-}
+]}

@@ -7,15 +7,11 @@ import { Persona } from '../entidades/persona';
   providedIn: 'root'
 })
 export class HeaderService {
-  url:string="http://localhost:8080/persona";
+  url="http://localhost:8080/personas/";
   constructor(private http:HttpClient) { 
   }
-
-  obtenerDatosPersona(id:number):Observable<Persona>{
-    return this.http.get<Persona>(this.url+"/"+id);
-  }
-
-  editarDatosPersona(persona:Persona):Observable<any>{
-    return this.http.put(this.url,persona);
+public getPersona(): Observable<Persona>{
+  return this.http.get<Persona>(this.url+"traer");
   }
 }
+

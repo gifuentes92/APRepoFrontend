@@ -3,12 +3,13 @@
     <div ><h2 class="pixellari">Educación</h2>
       <br>
     </div>
-  <div class="container-fluid"> <div *ngFor= "let item of educacion"  class="row">
-      <div class="col"><ul class="ul" id="parrafo_2">
-      <li>{{item.title}} <br> {{item.career}} <br> {{item.school}} <br> {{item.start}}-{{item.end}}</li>
+  <div class="container-fluid"> <div  class="row">
+      <div ><ul class="ul" id="parrafo_2">
+      <li *ngfor="let item of educacionlista"> {{item.titulo}} <br> {{item.curso}} <br> {{item.institucion}} <br> {{item.inicio}}-{{item.fin}}</li>
   </ul></div>
+ 
 
-  <!-- Button trigger modal -->
+  <!-- Button trigger modal-->
    <div class="row">
     <div class=col>
       <button type="button" class="boton-quitar1" style="z-index:-20px;" data-bs-toggle="modal" data-bs-target="#modalEditarEducacion"  (click)="mostrarDatosEducacion()"  >Editar</button>
@@ -18,7 +19,7 @@
  </div> 
  
 
-  <!-- Button trigger modal viejo
+  <!--Button trigger modal viejo
 <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarEducacion">Editar</button>-->
 
 <!-- Modal -->
@@ -32,53 +33,46 @@
         </button>
       </div>
       <div class="modal-body">
-        <form group="form">
-          <div><label for="school" class="form-text">Institución educativa</label>
-            <input type="text" name="school" id="school" placeholder="Ingrese Institución" formControlName="school">
-            <div *ngIf="school?.invalid && school?.touched">
-          <div *ngIf="school?.errors?.['required']" class="form-alert">
+        <form [formGroup]="form">
+          <div><label for="institucion" class="form-text">Institución educativa</label>
+            <input type="text" name="institucion" id="institucion" placeholder="Ingrese Institución" formControlName="institucion">
+            <div *ngIf="institucion?.invalid && institucion?.touched">
+          <div *ngIf="institucion?.errors?.['required']" class="form-alert">
               Se necesita una institución.
           </div>
-          <div *ngIf="school?.errors?.['minlength']"class="form-alert">
+          <div *ngIf="institucion?.errors?.['minlength']"class="form-alert">
           La institución debe ser de al menos 3 caracteres.
          </div>
         </div>
           </div>
-          <div><label for="title" class="form-text">Título</label>
-          <input type="text" name="title" id="title" placeholder="Ingrese Título" formControlName="title">
-          <div *ngIf="title?.invalid &&title?.touched">
-            <div *ngIf="title?.errors?.['required']" class="form-alert">
+          <div><label for="titulo" class="form-text">Título</label>
+          <input type="text" name="titulo" id="titulo" placeholder="Ingrese Título" formControlName="titulo">
+          <div *ngIf="titulo?.invalid &&titulo?.touched">
+            <div *ngIf="titulo?.errors?.['required']" class="form-alert">
               Se requiere una titulo.
               </div>
-             <div *ngIf="title?.errors?.['minlength']"class="form-alert">
+             <div *ngIf="titulo?.errors?.['minlength']"class="form-alert">
               La descripción debe ser de al menos 4 caracteres.
              </div> 
            </div>
-          <div><label for="career" class="form-text">Carrera o curso</label>
-            <input type="text" name="carrer" id="career" placeholder="Ingrese carrera o curso" formControlName="career">
-            <div *ngIf="career?.invalid &&career?.touched">
-              <div *ngIf="career?.errors?.['required']" class="form-alert">
+          <div><label for="curso" class="form-text">Carrera o curso</label>
+            <input type="text" name="carrer" id="curso" placeholder="Ingrese carrera o curso" formControlName="curso">
+            <div *ngIf="curso?.invalid &&curso?.touched">
+              <div *ngIf="curso?.errors?.['required']" class="form-alert">
                 Se requiere una carrera o curso.
                 </div>
-               <div *ngIf="career?.errors?.['minlength']"class="form-alert">
+               <div *ngIf="curso?.errors?.['minlength']"class="form-alert">
                 La descripción de la carrera debe ser de al menos 4 caracteres.
                </div> 
              </div>
             </div>
            
-          <div><label for="score" class="form-text">Nota promedio</label>
-            <input type="text" name="score" id="score" placeholder="Ingrese nota promedio" formControlName="score">
-            <div *ngIf="score?.invalid && score?.touched">
-               <div *ngIf="score?.errors?.['maxLength']"class="form-alert">
-                La nota promedio debe ser de hasta 14 caracteres.
-               </div>
-            </div>
-          </div>
-         <div><label for="start" class="form-text">Año de inicio</label>
+          
+         <div><label for="inicio" class="form-text">Año de inicio</label>
             <br>
             <input type="number" class="numero-lista" min="2010" max="2099"step="1" value="2018"/>
             </div>
-            <div><label for="start" class="form-text">Año de finalización </label>
+            <div><label for="fin" class="form-text">Año de finalización </label>
               <br>
               <input type="number" class="numero-lista"  min="2010" max="2099"step="1"/>
               </div>

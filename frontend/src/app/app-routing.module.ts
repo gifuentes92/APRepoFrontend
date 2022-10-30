@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
 
 const routes: Routes = [
   {path:'portfolio', component:PortfolioComponent},
   {path:'login', component:LoginComponent},
+  {path:'contacto',component:ContactoComponent},
   {path: '',redirectTo:'login',pathMatch:'full'}
 ];
 

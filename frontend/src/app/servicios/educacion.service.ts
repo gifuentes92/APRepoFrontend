@@ -1,23 +1,25 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { educacion } from '../entidades/educacion';
+import { Educacion } from '../entidades/educacion';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EducacionService {
-
+url:string="http://localhost:8080/educacion";
   constructor(private http:HttpClient) {
-
   }
 
-    obtenerDatosEducacion():Observable<any>{
-    return this.http.get('./assets/data/educacion.json');
-   }
-  
+  /*Educacion*/
+  obtenerEducacion(): Observable<any> {
+    return this.http.get(this.url+"/lista");
+  }
+  editarDatosEducacion(id:number,educacion:Educacion):Observable<any>{
+    return this.http.put(this.url+'/editar/'+id,educacion);
+  }
 
-   editarDatosEducacion(educacion:educacion):Observable<any>{
-    return this.http.post('http://localhost:3000/posts',educacion);
+  borrarDatosEducacion(id:number):Observable<any>{
+    return this.http.delete(this.url+'/'+id);
   }
 }

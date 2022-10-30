@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Persona } from 'src/app/entidades/persona';
 import { HeaderService } from 'src/app/servicios/header.service';
 
@@ -11,33 +12,31 @@ import { HeaderService } from 'src/app/servicios/header.service';
 })
 
 
-
 export class HeaderComponent implements OnInit {
 persona!:Persona;
 userAuntenticado:boolean=true;//deberia ser false
 form:FormGroup;
-  constructor(private miServicio:HeaderService, private miFormBuild:FormBuilder) {
-    this.form=this.miFormBuild.group({
+id:any;
+ 
+
+
+constructor(private miServicio:HeaderService, private miFormBuild:FormBuilder, private router:Router) {
+    
+  this.form=this.miFormBuild.group({
       nombre:['',[Validators.required,Validators.minLength(4)]],
-      apellido:['',[Validators.required,Validators.minLength(4)]],
       urlfoto:['https://',[Validators.required, Validators.pattern("https?://.+")]],
       puesto:['',[Validators.required, Validators.minLength(4)]],
-      acerca_de:['',[Validators.required, Validators.maxLength(50)]]
+      acercade:['',[Validators.required, Validators.maxLength(50)]]
+      
     });
   
+   
+
    }
  
    get nombre(){
       return this.form.get("nombre");
-    }
-
-    get apellido(){
-      return this.form.get("apellido");
-    }
-
-    get fecha_nacimiento(){
-      return this.form.get("fecha_nacimiento");
-    }
+    } 
 
     get urlfoto(){
       return this.form.get("urlfoto");
@@ -47,39 +46,40 @@ form:FormGroup;
       return this.form.get("puesto");
     }
 
-    get acerca_de(){
-      return this.form.get("acerca_de");
+    get acercade(){
+      return this.form.get("acercade");
     }
     
-    get email(){
-      return this.form.get("email");
-    }
-
+   
 
   ngOnInit(): void {
     this.miServicio.obtenerDatosPersona(1).subscribe(data =>{
       this.persona=data;
       console.log(data);
+      this.id=this.persona['id']
     })
-  }
 
-  guardarNombre(){
+    
+
+  }
+login(){
+      this.router.navigate(['/login']);
+    }
+    
+  editarDatosPersona(){
     if(this.form.valid){
      
-      let id=this.form.get("id")?.value;
       let nombre =this.form.get("nombre")?.value;
-      let apellido= this.form.get("apellido")?.value;
+      let urlfoto=this.form.get("urlfoto")?.value;
       let puesto =this.form.get("puesto")?.value;
-      let fecha_nacimiento=this.form.get("fecha_nacimiento")?.value;
-      let acerca_de =this.form.get("acerca_de")?.value;
+      let acercade =this.form.get("acercade")?.value;
       
       
-      let personaEditar = new Persona(id,nombre,apellido,puesto,fecha_nacimiento,acerca_de,puesto);
+      let personaEditar = new Persona(this.id,nombre,puesto,urlfoto,acercade);
       this.miServicio.editarDatosPersona(personaEditar).subscribe({
         next: (data) => {
           this.persona=personaEditar;
-          this.form.reset();
-          this.form.markAsPristine();
+          this.ngOnInit();
            document.getElementById("cerrarModal")?.click();
         },
         error: (error) => {
@@ -103,8 +103,9 @@ form:FormGroup;
 
   mostrarDatosEncabezado(){
     this.form.get("nombre")?.setValue(this.persona.nombre);
+    this.form.get("urlfoto")?.setValue(this.persona.urlfoto);
     this.form.get("puesto")?.setValue(this.persona.puesto);
-    this.form.get("acerca_de")?.setValue(this.persona.acerca_de);
+    this.form.get("acercade")?.setValue(this.persona.acercade);
   }
 }
 

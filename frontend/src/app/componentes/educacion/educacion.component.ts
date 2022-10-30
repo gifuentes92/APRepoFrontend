@@ -1,6 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 import { EducacionService } from 'src/app/servicios/educacion.service';
-import { educacion } from 'src/app/entidades/educacion';
+import { Educacion } from 'src/app/entidades/educacion';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-educacion',
@@ -8,77 +9,85 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent implements OnInit {
-  educacion:any;
+  educacion!:Educacion;
+  edulist:any;
   usuarioAutenticado:boolean=true; //deberia estar en false hasta login de usuario
   form: FormGroup;
-  
 
-constructor(private miServicio:EducacionService, private miFormBuild:FormBuilder) {
+
+
+  
+  
+  constructor(private miServicio:EducacionService, private miFormBuild:FormBuilder) {
     this.form=this.miFormBuild.group({
-      id:['',],
-      school:['',[Validators.required,Validators.minLength(3)]],
-      title:['',[Validators.required, Validators.minLength(4)]],
-      career:['',[Validators.required,Validators.minLength(4)]],
-      score:['',[Validators.maxLength(15)]],
-      start:['',],
-      end:['']});
+      id:[''],
+      institucion:['',[Validators.required,Validators.minLength(3)]],
+      titulo:['',[Validators.required, Validators.minLength(4)]],
+      curso:['',[Validators.required,Validators.minLength(4)]],
+      inicio:['',],
+      fin:['']});
   
    }
  
+   
+   
+
    get id(){
     return this.form.get("id");
-   }
-   get school(){
-      return this.form.get("school");
-    }
+  } 
 
-    get title(){
-      return this.form.get("title");
-    }
 
-    get career(){
-      return this.form.get("career");
-    }
+   get institucion(){
+    return this.form.get("institucion");
+  } 
 
-    get score(){
-      return this.form.get("score");
-    }
+  get curso(){
+    return this.form.get("curso");
+  }
 
-        get start(){
-      return this.form.get("start");
-    }
+  get titulo(){
+    return this.form.get("titulo");
+  }
 
-        get end(){
-      return this.form.get("end");
-    }
+  get inicio(){
+    return this.form.get("inicio");
+  }
+
+  get fin(){
+    return this.form.get("fin");
+  }
+ 
 
   ngOnInit(): void {
-    this.miServicio.obtenerDatosEducacion().subscribe(data =>{
+
+    
+
+    this.miServicio.obtenerEducacion().subscribe(data=>{
+      
       this.educacion=data["educacion"];
       console.log(data);
+      this.edulist=this.educacion["id"];
+      console.log(this.edulist);
+     
+      
     })
   }
 
  
-
-
-  
  
  
 
    guardarEducacion(){
     if(this.form.valid){
      
-      let id=this.form.get("id")?.value;
-      let school =this.form.get("School")?.value;
-      let title =this.form.get("title")?.value;
-      let career=this.form.get("carrer")?.value;
-      let score =this.form.get("score")?.value;
-      let start =this.form.get("start")?.value;
-      let end =this.form.get("end")?.value;
+      let institucion =this.form.get("institucion")?.value;
+      let titulo =this.form.get("titulo")?.value;
+      let curso=this.form.get("curso")?.value;
+      let inicio =this.form.get("inicio")?.value;
+      let fin =this.form.get("fin")?.value;
      
-      let educacionEditar = new educacion(id,school, title,career,score, start, end);
-      this.miServicio.editarDatosEducacion(educacionEditar).subscribe({
+      let educacionEditar = new Educacion(this.edulist,institucion, curso,titulo, inicio,fin);
+      this.miServicio.editarDatosEducacion(this.edulist,educacionEditar).subscribe({
         next: (data) => {
           this.educacion=educacionEditar;
           this.form.reset();
@@ -105,11 +114,14 @@ constructor(private miServicio:EducacionService, private miFormBuild:FormBuilder
   }
 
   mostrarDatosEducacion(){
-    this.form.get("school")?.setValue(this.educacion.school);
-    this.form.get("title")?.setValue(this.educacion.title);
-    this.form.get("career")?.setValue(this.educacion.career);
-    this.form.get("score")?.setValue(this.educacion.score);
-    this.form.get("start")?.setValue(this.educacion.start);
-    this.form.get("end")?.setValue(this.educacion.end);
+    this.form.get("school")?.setValue(this.educacion.institucion);
+    this.form.get("title")?.setValue(this.educacion.titulo);
+    this.form.get("career")?.setValue(this.educacion.curso);
+    this.form.get("start")?.setValue(this.educacion.inicio);
+    this.form.get("end")?.setValue(this.educacion.fin);
+   
+
+
+
   }
 }

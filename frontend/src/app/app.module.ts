@@ -19,6 +19,7 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,6 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
     IdiomasComponent,
     LoginComponent,
     PortfolioComponent
-    
   ],
   imports: [
     BrowserModule,

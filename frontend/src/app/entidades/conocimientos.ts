@@ -1,12 +1,12 @@
 
 
-export class conocimientos{
-    idSkill:number;
-    skill:String;
+export class Skill{
+    id:number;
+    Skill:String;
 
 
-constructor(idSkill:number,skill:string){
-    this.skill=skill;
-    this.idSkill=idSkill;
+constructor(id:number,Skill:string){
+    this.Skill=Skill;
+    this.id=id;
 }
 }

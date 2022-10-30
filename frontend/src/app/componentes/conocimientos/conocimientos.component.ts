@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConocimientosService } from 'src/app/servicios/conocimientos.service';
-import { conocimientos } from 'src/app/entidades/conocimientos';
+import { Skill } from 'src/app/entidades/conocimientos';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
   styleUrls: ['./conocimientos.component.css']
 })
 export class ConocimientosComponent implements OnInit {
-  conocimientos:any;
+  Skill:any;
 form:FormGroup;
 userAuntenticado:boolean=true; //debería ser false
   constructor(private miServicio:ConocimientosService,private miFormBuld:FormBuilder) {
@@ -25,7 +25,7 @@ userAuntenticado:boolean=true; //debería ser false
        
   ngOnInit(): void {
     this.miServicio.obtenerDatosConocimientos().subscribe(data =>{
-      this.conocimientos=data["conocimientos"];
+      this.Skill=data["Skill"];
     });
   }
 
@@ -34,14 +34,14 @@ userAuntenticado:boolean=true; //debería ser false
     if(this.form.valid){
      
       let skill =this.form.get("skill")?.value;
-      let idSkill=this.form.get("idSkill")?.value;
+      let id=this.form.get("id")?.value;
     
       
     
-      let skillEditar = new conocimientos(skill,idSkill);
-      this.miServicio.editarDatosConocimientos(skillEditar).subscribe({
+      let skillEditar = new Skill(skill,id);
+      this.miServicio.editarDatosConocimientos(id, skill).subscribe({
         next: (data) => {
-          this.conocimientos=skillEditar;
+          this.Skill=skillEditar;
           this.form.reset();
           this.form.markAsPristine();
            document.getElementById("cerrarModal")?.click();
@@ -66,47 +66,8 @@ userAuntenticado:boolean=true; //debería ser false
   }
 
   mostrarDatosSkill(){
-    this.form.get("skill")?.setValue(this.conocimientos.skill);
+    this.form.get("skill")?.setValue(this.Skill.skill);
   }
 }
 
 
-/*
-
-
-export class HeaderComponent implements OnInit {
-persona:any;
-userAuntenticado:boolean=true;//deberia ser false
-form:FormGroup;
-  constructor(private miServicio:HeaderService, private miFormBuild:FormBuilder) {
-    this.form=this.miFormBuild.group({
-      fullname:['',[Validators.required,Validators.minLength(4)]],
-      position:['',[Validators.required, Validators.minLength(4)]],
-      aboutMe:['',[Validators.required, Validators.maxLength(50)]]
-    });
-  
-   }
- 
-   get fullname(){
-      return this.form.get("fullname");
-    }
-
-    get position(){
-      return this.form.get("position");
-    }
-
-    get aboutMe(){
-      return this.form.get("aboutMe");
-    }
-
-  ngOnInit(): void {
-    this.miServicio.obtenerDatosPersona().subscribe(data =>{
-      this.persona=data["persona"];
-      console.log(data);
-    })
-  }
-
-}
-
-
-*/

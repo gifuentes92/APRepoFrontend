@@ -1,19 +1,16 @@
 <div class="topnav">
   <img class="topnav-img"  src="../assets/img/APLogo.png">
-  <button type="button" class="btnn">Login</button>
-  <a href="#down"><img class="topnav-icono" src="../assets/img//icons/GMail.png" ></a>
-  <a href="https://discord.gg/3cEYjjmg8V"><img class="topnav-icono" src="../assets/img/icons/discord.png"></a>
-  <a href="https://github.com/gifuentes92"><img class="topnav-icono" src="../assets/img/icons/git.png"></a>
-  <a href="https://t.me/gifuentes92"><img class="topnav-icono" src="../assets/img/icons/Telegram.png"></a> 
+  <button type="button" class="btnn" (click)="login()">Login</button>
+  
  
 </div>
 
 
-<div class="titulo"><p id="titulo">{{persona.nombre}} {{persona.apellido}}</p></div> 
+<div class="titulo"><p id="titulo">{{persona.nombre}}</p></div> 
   <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarNombre" (click)="mostrarDatosEncabezado()">Editar</button>
 
  <img class="avatar" [src]=persona.urlfoto alt="avatar">
-<div class="desc">{{persona.puesto}} - {{persona.acerca_de}}</div>
+<div class="desc">{{persona.puesto}} - {{persona.acercade}}</div>
 
 
 
@@ -28,7 +25,7 @@
         </button>
       </div>
       <div class="modal-body">
-       <form group="form">
+       <form [formGroup]="form">
         <label for="nombre" class="form-text">Nombre y apellido</label>
        <div> <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre y apellido" formControlName="nombre">
           <div *ngIf="nombre?.invalid &&  nombre?.touched">
@@ -39,8 +36,20 @@
           El nombre y apellido debe ser de al menos 4 caracteres.
          </div>
         </div>   
-      </div>     
-        <label for="nombre" class="form-text">Posición</label>
+      </div>
+      
+      <label for="urlfoto" class="form-text">Imágen</label>
+       <input type="text" name="urlfoto" id="urlfoto" placeholder="Ingrese url de imágen" formControlName="urlfoto">
+       <div *ngIf="urlfoto?.invalid && urlfoto?.touched">
+        <div *ngIf="urlfoto?.errors?.['required']" class="form-alert">
+         Se necesita una url.
+        </div>
+       <div *ngIf="urlfoto?.errors?.['pattern']"class="form-alert">
+        No es una url válida.
+       </div>
+      </div>
+      
+        <label for="puesto" class="form-text">Posición</label>
        <input type="text" name="puesto" id="puesto" placeholder="Ingrese posición" formControlName="puesto">
        <div *ngIf="puesto?.invalid && puesto?.touched">
         <div *ngIf="puesto?.errors?.['required']" class="form-alert">
@@ -50,13 +59,15 @@
         La posición debe ser de al menos 4 caracteres.
        </div>
       </div>
+       
+       
        <label for="acerca_de" class="form-text">Descripción</label>
-       <input type="text" name="acerca_de" id="acerca_de" placeholder="Ingrese descripción"formControlName="acerca_de">
-       <div *ngIf="acerca_de?.invalid &&acerca_de?.touched">
-       <div *ngIf="acerca_de?.errors?.['required']" class="form-alert">
+       <input type="text" name="acercade" id="acercade" placeholder="Ingrese descripción"formControlName="acercade">
+       <div *ngIf="acercade?.invalid &&acercade?.touched">
+       <div *ngIf="acercade?.errors?.['required']" class="form-alert">
          Se requiere una descripción.
          </div>
-        <div *ngIf="acerca_de?.errors?.['maxlength']"class="form-alert">
+        <div *ngIf="acercade?.errors?.['maxlength']"class="form-alert">
          La descripción debe ser de hasta 50 caracteres.
         </div> 
       </div>
@@ -64,7 +75,7 @@
     </div> 
       <div class="modal-footer">
         <button type="button" id="cerrarModal" class="boton-quitar1" (click)="cerrarModalData()" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="boton-editar1"(click)="guardarNombre()">Guardar</button>
+        <button type="button" class="boton-editar1"(click)="editarDatosPersona()">Guardar</button>
       </div>
     </div>
   </div>
