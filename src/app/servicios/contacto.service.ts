@@ -8,7 +8,7 @@ import { Contacto } from '../entidades/contacto';
   providedIn: 'root'
 })
 export class ContactoService {
-  url:string="http://localhost:8080/contacto/";
+  url:string="https://backendapfuentes.onrender.com/contacto/";
   constructor(private http:HttpClient) { 
 
   }

@@ -7,7 +7,7 @@ import { Skill } from '../entidades/conocimientos';
   providedIn: 'root'
 })
 export class ConocimientosService {
-  url:string="http://localhost:8080/skill";
+  url:string="https://backendapfuentes.onrender.com/skill";
   skill: any;
   constructor(private http:HttpClient) { 
 

@@ -7,7 +7,7 @@ import { Idioma } from '../entidades/idiomas';
   providedIn: 'root'
 })
 export class IdiomasService {
-  url:string="http://localhost:8080/idioma/";
+  url:string="https://backendapfuentes.onrender.com/idioma/";
   constructor(private http:HttpClient){
 
   }
