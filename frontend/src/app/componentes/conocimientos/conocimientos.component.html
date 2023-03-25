@@ -1,40 +1,37 @@
 <div class="parrafo">
     <div><h2 class="pixellari">Habilidades</h2></div>
-    <ul  class="ul"   id="parrafo">
-      <li *ngFor="let item of Skill.skill">{{item}}</li>
+    <ul  class="ul"   id="parrafo"*ngFor="let item of skilList">
+      <li >{{item.skill}}</li>
+      <button type="button" class="boton-editar1" *ngIf="isLogged"(click)="deleteS(item.id)" >Eliminar</button>
+      <button type="button" class="boton-quitar3" *ngIf="isLogged" routerLink="/editskill/{{item.id}}">Editar</button>
       
     </ul>
-  <button type="button" class="boton-quitar3" data-bs-toggle="modal" data-bs-target="#modalEditarSkill">Editar</button>
-  
+  <br>
+  <br>
+  <button  type="button" class="boton-quitar3" data-bs-toggle="modal" data-bs-target="#modalAgregarSkill" *ngIf="isLogged">Agregar</button>
   </div>
 
-  <div class="modal fade" id="modalEditarSkill" tabindex="-1" role="dialog" aria-labelledby="modalEditarSkillLabel" aria-hidden="true">
+
+
+  <div class="modal fade" id="modalAgregarSkill" tabindex="-1" role="dialog" aria-labelledby="modalAgregarSkillLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-fondo">
         <div class="modal-header">
-          <h5 class="modal-titulo" id="modalEditarSkillLabel">Editar</h5>
+          <h5 class="modal-titulo" id="modalAgregarSkillLabel">Agregar</h5>
           <button type="button" class="boton-quitar1" data-bs-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form group="form">
+          <form group="form" (ngSubmit)="onCreateS()" novalidate #f="ngForm">
             <div><label for="skill" class="form-text">Conocimientos</label>
-              <input type="text" name="skill" id="skill" placeholder="Ingrese Habilidad" formControlName="skill">
-              <div *ngIf="skill?.invalid && skill?.touched">
-                <div *ngIf="skill?.errors?.['maxLength']"class="form-alert">
-                 El dato ingresado debe ser de hasta 50 caracteres.
-                </div>
-                <div *ngIf="skill?.errors?.['minLength']" class="form-alert">
-                El dato ingresado debe tener al menos 3 caracteres.
-                </div>
-             </div>
+              <input type="text" name="skill" id="skill" placeholder="Ingrese Habilidad"  [(ngModel)]="skill" required>
             </div>
           </form>            
         </div>
         <div class="modal-footer">
-          <button type="button" id="cerrarModal" class="boton-quitar3"  data-bs-dismiss="modal" (click)="cerrarModalSkill()">Cerrar</button>
-          <button type="button" class="boton-editar3" (click)=" guardarSkill()">Guardar</button>
+          <button type="button" id="cerrarModal" class="boton-quitar3"  data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="boton-editar3" (click)="onCreateS()">Guardar</button>
         </div>
       </div>
     </div>

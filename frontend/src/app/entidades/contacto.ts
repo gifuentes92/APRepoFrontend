@@ -1,12 +1,11 @@
-export class contacto {
+export class Contacto {
 
-    id:number
+    id?:number
     discord:string
     github:string
     telegram:string
 
-    constructor(id:number, discord:string, github:string,telegram:string){
-        this.id=id
+    constructor(discord:string, github:string,telegram:string){
         this.discord=discord
         this.github=github
         this.telegram=telegram

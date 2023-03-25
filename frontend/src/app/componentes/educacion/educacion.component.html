@@ -1,94 +1,86 @@
-<link rel="stylesheet" href="educacion.component.css">
-<div class="container-fluid"><div class="parrafo">
-    <div ><h2 class="pixellari">Educación</h2>
-      <br>
+<link rel="stylesheet" href="educacion.component.css" />
+<div class="container-fluid">
+  <div class="parrafo">
+    <div>
+      <h2 class="pixellari">Educación</h2>
+      <br />
     </div>
-  <div class="container-fluid"> <div  class="row">
-      <div ><ul class="ul" id="parrafo_2">
-      <li *ngfor="let item of educacionlista"> {{item.titulo}} <br> {{item.curso}} <br> {{item.institucion}} <br> {{item.inicio}}-{{item.fin}}</li>
-  </ul></div>
- 
-
-  <!-- Button trigger modal-->
-   <div class="row">
-    <div class=col>
-      <button type="button" class="boton-quitar1" style="z-index:-20px;" data-bs-toggle="modal" data-bs-target="#modalEditarEducacion"  (click)="mostrarDatosEducacion()"  >Editar</button>
-      </div>
-    </div>
-</div>
- </div> 
- 
-
-  <!--Button trigger modal viejo
-<button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarEducacion">Editar</button>-->
-
-<!-- Modal -->
-<div class="modal fade" id="modalEditarEducacion" tabindex="-1" role="dialog" aria-labelledby="modalEditarEducacionLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-fondo">
-      <div class="modal-header">
-        <h5 class="modal-titulo" id="modalEditarEducacionLabel">Editar</h5>
-        <button type="button" class="boton-quitar1" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="form">
-          <div><label for="institucion" class="form-text">Institución educativa</label>
-            <input type="text" name="institucion" id="institucion" placeholder="Ingrese Institución" formControlName="institucion">
-            <div *ngIf="institucion?.invalid && institucion?.touched">
-          <div *ngIf="institucion?.errors?.['required']" class="form-alert">
-              Se necesita una institución.
-          </div>
-          <div *ngIf="institucion?.errors?.['minlength']"class="form-alert">
-          La institución debe ser de al menos 3 caracteres.
-         </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div>
+          <ul class="ul" id="parrafo_2" *ngFor="let item of edulist">
+            <li>
+              {{ item.titulo }} <br />
+              {{ item.curso }} <br />
+              {{ item.institucion }} <br />
+              {{ item.inicio }}-{{ item.fin }}
+              <button type="button" class="boton-editar1" *ngIf="isLogged" (click)="delete(item.id)">Eliminar</button>
+              <button type="button" class="boton-quitar1" *ngIf="isLogged" routerLink="/editedu/{{item.id}}">
+                Editar
+              </button>
+            </li>
+          </ul>
         </div>
+      </div>
+      <br>
+      <button type="button" class="boton-quitar3" data-bs-toggle="modal" data-bs-target="#ModalAgregar"
+        *ngIf="isLogged">Agregar</button>
+    </div>
+
+
+
+    <div class="modal fade" id="ModalAgregar" tabindex="-1" role="dialog" aria-labelledby="ModalAgregarLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-fondo">
+          <div class="modal-header">
+            <h5 class="modal-titulo" id="ModalAgregarLabel">Agregar</h5>
+            <button type="button" class="boton-quitar1" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-          <div><label for="titulo" class="form-text">Título</label>
-          <input type="text" name="titulo" id="titulo" placeholder="Ingrese Título" formControlName="titulo">
-          <div *ngIf="titulo?.invalid &&titulo?.touched">
-            <div *ngIf="titulo?.errors?.['required']" class="form-alert">
-              Se requiere una titulo.
+          <div class="modal-body">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+              <div>
+                <label for="institucion" class="form-text">Institución educativa</label>
+                <input type="text" name="institucion" id="institucion" placeholder="Ingrese Institución"
+                  [(ngModel)]="institucion" required />
+
               </div>
-             <div *ngIf="titulo?.errors?.['minlength']"class="form-alert">
-              La descripción debe ser de al menos 4 caracteres.
-             </div> 
-           </div>
-          <div><label for="curso" class="form-text">Carrera o curso</label>
-            <input type="text" name="carrer" id="curso" placeholder="Ingrese carrera o curso" formControlName="curso">
-            <div *ngIf="curso?.invalid &&curso?.touched">
-              <div *ngIf="curso?.errors?.['required']" class="form-alert">
-                Se requiere una carrera o curso.
+              <div>
+                <label for="titulo" class="form-text">Título</label>
+                <input type="text" name="titulo" id="titulo" placeholder="Ingrese Título" [(ngModel)]="titulo"
+                  required />
+
+                <div>
+                  <label for="curso" class="form-text">Carrera o curso</label>
+                  <input type="text" name="curso" id="curso" placeholder="Ingrese carrera o curso" [(ngModel)]="curso"
+                    required />
                 </div>
-               <div *ngIf="curso?.errors?.['minlength']"class="form-alert">
-                La descripción de la carrera debe ser de al menos 4 caracteres.
-               </div> 
-             </div>
-            </div>
-           
-          
-         <div><label for="inicio" class="form-text">Año de inicio</label>
-            <br>
-            <input type="number" class="numero-lista" min="2010" max="2099"step="1" value="2018"/>
-            </div>
-            <div><label for="fin" class="form-text">Año de finalización </label>
-              <br>
-              <input type="number" class="numero-lista"  min="2010" max="2099"step="1"/>
+
+                <div>
+                  <label for="inicio" class="form-text">Año de inicio</label>
+                  <br />
+                  <input type="number" class="numero-lista" min="2010" max="2099" step="1" value="2018" id="inicio"
+                    name="inicio" [(ngModel)]="inicio" required />
+                </div>
+                <div>
+                  <label for="fin" class="form-text">Año de finalización
+                  </label>
+                  <br />
+                  <input type="number" class="numero-lista" min="2010" max="2099" step="1" id="fin" name="fin"
+                    [(ngModel)]="fin" required />
+                </div>
               </div>
+            </form>
+            <div class="modal-footer">
+              <button type="button" id="cerrarModal" class="boton-quitar1" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+              <button type="button" class="boton-editar1" (click)="onCreate()">Guardar</button>
+            </div>
           </div>
-          
-      </form>
-      <div class="modal-footer">
-        <button type="button" id="cerrarModal" class="boton-quitar1"  data-bs-dismiss="modal" (click)="cerrarModalData()">Cerrar</button>
-        <button type="button" class="boton-editar1" (click)="guardarEducacion()">Guardar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-  
-  </div>
-</div>
-
- <!--<button  type="button" class="boton-quitar3">eliminar</button>-->

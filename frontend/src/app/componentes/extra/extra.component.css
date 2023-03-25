@@ -1,16 +1,13 @@
 .parrafo{
-    position: static;
-    text-size-adjust: medium;
-    background-image:url(../conocimientos/assets/pixel.jpg);
-    background-size:auto;
-    background-repeat:repeat-x;
-    background-position: center;
-    margin: 0 21rem 3rem 21rem;
-    padding: 2rem 8rem 4rem 8rem;
-    border-radius: 10px;
-    box-sizing: border-box;
-    }
-
+  position: static;
+  text-size-adjust: medium;
+  background-image:url(../conocimientos/assets/pixel.jpg);
+  background-size:contain;
+  margin: 0 21rem 3rem 21rem;
+  padding: 2rem 8rem 4rem 8rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  }
 
 
 .pixellari{

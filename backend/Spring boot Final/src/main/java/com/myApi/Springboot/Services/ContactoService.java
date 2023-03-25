@@ -4,6 +4,7 @@ package com.myApi.Springboot.Services;
 import com.myApi.Springboot.Model.Contacto;
 import com.myApi.Springboot.Repository.ContactoRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,4 +31,12 @@ public void crearContacto(Contacto contacto)
         return contacto;
     }
 
+        public Optional<Contacto> getOne(Long id) {
+          return contactoRepo.findById(id);
+      }
+     
+         public boolean existsById(Long Id) {
+          return contactoRepo.existsById(Id);
+      }
+    
 }

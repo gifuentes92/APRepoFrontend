@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ConocimientosService } from 'src/app/servicios/conocimientos.service';
 import { Skill } from 'src/app/entidades/conocimientos';
-import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { TokenService } from 'src/app/servicios/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-conocimientos',
@@ -9,65 +10,65 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
   styleUrls: ['./conocimientos.component.css']
 })
 export class ConocimientosComponent implements OnInit {
-  Skill:any;
-form:FormGroup;
-userAuntenticado:boolean=true; //debería ser false
-  constructor(private miServicio:ConocimientosService,private miFormBuld:FormBuilder) {
-    this.form=miFormBuld.group({
-      skill:['',[Validators.minLength(4),Validators.maxLength(50)]]
-    });
+  isLogged = false;
+
+  skills: Skill[] = [];
+  skilList: any;
+  skill: string;
+
+
+  userAuntenticado: boolean = true; //debería ser false
+  constructor(private skillService: ConocimientosService, private tokenService: TokenService, private router: Router) {
+
   }
-     get skill(){
-       return this.form.get("skill");
-       }
 
 
-       
+
   ngOnInit(): void {
-    this.miServicio.obtenerDatosConocimientos().subscribe(data =>{
-      this.Skill=data["Skill"];
+    this.obtenerConocimientos();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+
+
+
+  }
+
+  obtenerConocimientos(): void {
+    this.skillService.obtenerDatosConocimientos().subscribe((data) => {
+      this.skilList = data;
     });
   }
 
- 
-  guardarSkill(){
-    if(this.form.valid){
-     
-      let skill =this.form.get("skill")?.value;
-      let id=this.form.get("id")?.value;
-    
-      
-    
-      let skillEditar = new Skill(skill,id);
-      this.miServicio.editarDatosConocimientos(id, skill).subscribe({
-        next: (data) => {
-          this.Skill=skillEditar;
-          this.form.reset();
-          this.form.markAsPristine();
-           document.getElementById("cerrarModal")?.click();
-        },
-        error: (error) => {
-          alert("No se pudo actualizar el registro, por favor intente nuevamente.");
-        }
-      })
-      
-     
-    }
-    else
-      {
-     alert("Hay errores, por favor revise los datos");
-      this.form.markAllAsTouched();
-    }
-  }
-  
-  cerrarModalSkill(){
-    this.form.reset();
-    this.form.markAsPristine();
+  onCreateS(): void {
+    const nSkill = new Skill(
+      this.skill);
+    this.skillService.agregarDatosConocimientos(nSkill).subscribe(
+      (data) => {
+        alert('Se añadió correctamente la habilidad');
+        this.router.navigate(['']);
+      },
+      (err) => {
+        alert('No se pudieron guardar los datos');
+      }
+    );
   }
 
-  mostrarDatosSkill(){
-    this.form.get("skill")?.setValue(this.Skill.skill);
+  deleteS(id?: number) {
+    if (id != undefined) {
+      this.skillService.borrarDatosConocimientos(id).subscribe(
+        data => {
+          this.obtenerConocimientos();
+        }, err => {
+          alert("No se pudo eliminar");
+        }
+      )
+    }
   }
+
+
 }
 
 

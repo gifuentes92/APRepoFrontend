@@ -1,18 +1,22 @@
-<div class="fondo"><h1 class="titulo">Contacto</h1>
-    <a href={{Contacto.discord}}><img class="topnav-icono" src="../assets/img/icons/discord.png"> </a>
-    <a href="{github}"><img class="topnav-icono" src="../assets/img/icons/git.png"></a>
-    <a href="{telegram}"><img class="topnav-icono" src="../assets/img/icons/Telegram.png"></a>
+<div class="fondo" *ngFor="let con of conList"><h1 class="titulo">Contacto</h1>
+    <a href="{{con.discord}}"><img class="topnav-icono" src="../assets/img/icons/discord.png"> </a>
+    <a href="{{con.github}}"><img class="topnav-icono" src="../assets/img/icons/git.png"></a>
+    <a href="{{con.telegram}}"><img class="topnav-icono" src="../assets/img/icons/Telegram.png"></a>
  </div>
 <br>
 <br>
 <br>
-<form action="https://formspree.io/f/xoqrzqvg" method="POST">
+<div><form action="https://formspree.io/f/maykpzwz" method="POST">
     <h2 class="h2-form">Enviar correo</h2>
-    <input type="name" name="name" placeholder="Nombre" required>
-    <input type="email" name="email" placeholder="Correo" requiered>
+    <input type="name" name="name" id="name" placeholder="Nombre" required>
+    <input type="email" name="email" id="email" placeholder="Correo" requiered>
     <input type="text" name="Telefono" placeholder="Teléfono">
-    <textarea name="messahe" placeholder="Mensaje"></textarea>
+    <textarea name="message" id="message" placeholder="Mensaje"></textarea>
     <button type="submit" class="boton-enviar">Enviar</button>
 </form>
+
+<button class="boton-volver" routerLink="/portfolio">Volver</button>
+
+</div>
 
   

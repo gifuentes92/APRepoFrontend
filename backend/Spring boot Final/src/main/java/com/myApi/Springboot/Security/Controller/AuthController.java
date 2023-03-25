@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class AuthController {
 
     @Autowired
@@ -73,20 +73,20 @@ public class AuthController {
     
     @PostMapping("/login")
     public ResponseEntity<JwtDTO> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult){
-       if (bindingResult.hasErrors())
-           return new ResponseEntity(new Mensaje("Campos mal puestos"),HttpStatus.BAD_REQUEST);
-       
-       Authentication authentication =authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-               loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
-       
+      if(bindingResult.hasErrors())
+          return new ResponseEntity(new Mensaje("Campos mal puestos"),HttpStatus.BAD_REQUEST);
+      
+      Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
+              loginUsuario.getNombreUsuario(), loginUsuario.getPassword()));
+      
         SecurityContextHolder.getContext().setAuthentication(authentication);
         
         String jwt = jwtProvider.generateToken(authentication);
         
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        UserDetails userDetails =  (UserDetails) authentication.getPrincipal();
         
-        JwtDTO jwtDTO = new JwtDTO(jwt, userDetails.getUsername(),userDetails.getAuthorities());
+        JwtDTO jwtDTO = new JwtDTO(jwt, userDetails.getUsername(), userDetails.getAuthorities());
         
-        return new ResponseEntity(jwtDTO,HttpStatus.OK);
+        return new ResponseEntity(jwtDTO, HttpStatus.OK);
     }
 }

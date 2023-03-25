@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { contacto } from 'src/app/entidades/contacto';
+import { Router } from '@angular/router';
+import { Contacto } from 'src/app/entidades/contacto';
 import { ContactoService } from 'src/app/servicios/contacto.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-contacto',
@@ -12,37 +14,31 @@ import { ContactoService } from 'src/app/servicios/contacto.service';
 
  
 export class ContactoComponent implements OnInit {
-Contacto!:contacto;
+  contacto: Contacto[] = [];
+  conList: any;
+  isLogged = false;
+
 userAuntenticado:boolean=true;//deberia ser false
 form:FormGroup;
-  constructor(private miServicio:ContactoService, private miFormBuild:FormBuilder) {
-    this.form=this.miFormBuild.group({
-      discord:['https://',[Validators.pattern("https?://+")]],
-      telegram:['https://',[Validators.pattern("https?://+")]],
-      github:['https://',[Validators.pattern("https?://+")]]
-      
-    });
-  
-   }
- 
-   get discord(){
-      return this.form.get("discord");
-    } 
-
-    get telegram(){
-      return this.form.get("telegram");
-    }
-
-    get github(){
-      return this.form.get("github");
-    }
+  constructor(private contactoService:ContactoService,private tokenService: TokenService,
+    private router: Router) {
     
-   
+   }
 
   ngOnInit(): void {
-    this.miServicio.obtenerContacto().subscribe(data =>{
-      this.Contacto=data;
-      console.log(data);
-    })
+    this.obtenerContacto();
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    };
   }
+
+  obtenerContacto(): void {
+    this.contactoService.obtenerContacto().subscribe((data) => {
+      this.conList = data;
+       console.log(this.conList)
+    });
+  }
+
 }

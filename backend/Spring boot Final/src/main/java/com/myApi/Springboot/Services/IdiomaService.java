@@ -3,6 +3,7 @@ package com.myApi.Springboot.Services;
 import com.myApi.Springboot.Model.Idioma;
 import com.myApi.Springboot.Repository.IdiomaRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,10 @@ public class IdiomaService {
         idiomaRepo.deleteById(id);
     }
 
+     public Optional<Idioma> getOne(Long id) {
+          return idiomaRepo.findById(id);
+      }
+    
     public List<Idioma> mostrarIdioma() {
         return idiomaRepo.findAll();
     }
@@ -29,4 +34,9 @@ public class IdiomaService {
         return idioma;
 
     }
+    
+      public boolean existsById(Long Id) {
+          return idiomaRepo.existsById(Id);
+      }
+
 }

@@ -1,0 +1,50 @@
+<div class="modal-dialog" *ngIf="eduEdit">
+  <div class="modal-fondo">
+    <div class="modal-header">
+      <h5 class="modal-titulo" id="modalEditarEducacionLabel">Editar</h5>
+
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <div>
+          <label for="institucion" class="form-text">Institución educativa</label>
+          <input type="text" name="institucion" id="institucion" placeholder="Ingrese Institución"
+            [(ngModel)]="eduEdit.institucion" required />
+
+        </div>
+        <div>
+          <label for="titulo" class="form-text">Título</label>
+          <input type="text" name="titulo" id="titulo" placeholder="Ingrese Título" [(ngModel)]="eduEdit.titulo"
+            required />
+
+          <div>
+            <label for="curso" class="form-text">Carrera o curso</label>
+            <input type="text" name="curso" id="curso" placeholder="Ingrese carrera o curso" [(ngModel)]="eduEdit.curso"
+              required />
+
+          </div>
+
+          <div>
+            <label for="inicio" class="form-text">Año de inicio</label>
+            <br />
+            <input type="number" class="numero-lista" min="2010" max="2099" step="1" id="incio" name="inicio"
+              [(ngModel)]="eduEdit.inicio" required />
+          </div>
+          <div>
+            <label for="fin" class="form-text">Año de finalización
+            </label>
+            <br />
+            <input type="number" class="numero-lista" min="2010" max="2099" step="1" id="fin" name="fin"
+              [(ngModel)]="eduEdit.fin" required />
+          </div>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModal" class="boton-quitar1" data-bs-dismiss="modal" routerLink="/portfolio">
+          Cancelar
+        </button>
+        <button type="button" class="boton-editar1" (click)="onUpdate()">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -4,6 +4,7 @@ package com.myApi.Springboot.Services;
 import com.myApi.Springboot.Model.Extra;
 import com.myApi.Springboot.Repository.ExtraRepository;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,10 @@ public class ExtraService {
         extraRepo.deleteById(id);
     }
 
+       public Optional<Extra> getOne(Long id) {
+          return extraRepo.findById(id);
+      }
+    
     public List<Extra> mostrarExtra() {
         return extraRepo.findAll();
     }
@@ -30,4 +35,9 @@ public class ExtraService {
         return extra;
     
 }
+    
+      public boolean existsById(Long Id) {
+          return extraRepo.existsById(Id);
+      }
+
 }

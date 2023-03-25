@@ -8,6 +8,7 @@ import { Skill } from '../entidades/conocimientos';
 })
 export class ConocimientosService {
   url:string="http://localhost:8080/skill";
+  skill: any;
   constructor(private http:HttpClient) { 
 
   }
@@ -16,9 +17,20 @@ export class ConocimientosService {
   obtenerDatosConocimientos():Observable<any>{
     return this.http.get(this.url+"/mostrar");
   }
-
-  editarDatosConocimientos(id:number,skill:Skill):Observable<any>{
-  return this.http.post(this.url+ "/"+id,skill)
-}
+  public skillPorId(id:number):Observable<Skill>{
+    return this.http.get<Skill>(this.url+ "/detail"  + "/"  + id);
   }
 
+  public agregarDatosConocimientos(skill:Skill):Observable<any>{
+    return this.http.post(this.url+"/crear",skill);
+  }
+
+  public editarDatosConocimientos(id:number,skill:Skill):Observable<any>{
+    return this.http.put(this.url+"/editar"+"/"+id,skill);
+  }
+
+  public borrarDatosConocimientos(id:number):Observable<any>{
+    return this.http.delete(this.url+"/borrar"+"/"+id);
+  }
+
+}

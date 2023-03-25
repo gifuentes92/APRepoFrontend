@@ -2,9 +2,12 @@
 package com.myApi.Springboot.Controller;
 
 import com.myApi.Springboot.Model.Skill;
+import com.myApi.Springboot.Security.Controller.Mensaje;
 import com.myApi.Springboot.Services.SkillService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +32,17 @@ public List<Skill> mostrarSkill(){
     return skillServ.mostrarSkill();
 }
 
+  @GetMapping("/skill/detail/{id}")
+    public ResponseEntity<Skill> getById(@PathVariable("id") Long id) {
+        if (!skillServ.existsById(id)) {
+            return new ResponseEntity(new Mensaje("no existe el ID"), HttpStatus.BAD_REQUEST);
+        }
+
+        Skill skill = skillServ.getOne(id).get();
+
+        return new ResponseEntity(skill, HttpStatus.OK);
+    }
+
 @PostMapping("/skill/crear")
 public void crearSkill(@RequestBody Skill skill){
     skillServ.crearSkill(skill);
@@ -49,7 +63,7 @@ public Skill editarSkill(@RequestBody Skill skill, @PathVariable Long id){
 }
 
 
-@DeleteMapping("/skill/{id}")
+@DeleteMapping("/skill/borrar/{id}")
 public void borrarSkill(@PathVariable Long id){
     skillServ.borrarSkill(id);
 }

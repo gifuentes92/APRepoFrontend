@@ -1,12 +1,12 @@
-export class extra{
-    idextra:number;
-    Habilidad:string;
-    Programa:string;
+export class Extra{
+    id?:number;
+    skill:string;
+    programa:string;
 
-    constructor(idextra:number,Habilidad:string,Programa:string){
-        this.idextra=idextra;
-        this.Habilidad=Habilidad;
-        this.Programa=Programa;
+    constructor(skill:string,programa:string){
+        
+        this.skill=skill;
+        this.programa=programa;
     }
 
 }

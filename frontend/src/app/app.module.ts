@@ -12,9 +12,14 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { HttpClientModule} from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IdiomasComponent } from './componentes/idiomas/idiomas.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './componentes/login/login.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
+import { EditarEducacionComponent } from './componentes/educacion/editar-educacion/editar-educacion.component';
+import { EditConocimientosComponent } from './componentes/conocimientos/edit-conocimientos/edit-conocimientos.component';
+import { EditExtraComponent } from './componentes/extra/edit-extra/edit-extra.component';
+import { EditHeaderComponent } from './componentes/header/edit-header/edit-header.component';
+import { EditIdiomasComponent } from './componentes/idiomas/edit-idiomas/edit-idiomas.component';
 
 
 
@@ -31,14 +36,20 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
     ContactoComponent,
     IdiomasComponent,
     LoginComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    EditarEducacionComponent,
+    EditConocimientosComponent,
+    EditExtraComponent,
+    EditHeaderComponent,
+    EditIdiomasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -143,86 +143,13 @@
 }
 
 
-.modal-fondo{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  pointer-events: auto;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  outline: 0;
- 
-
-  background: #4a1e63;
-  background: -moz-linear-gradient(top,  #2c1e63 0%, #352865 4%, #352865 9%, #43369d 29%, #43369d 58%, #562499 82%, #be88e2 100%);
-  background: -webkit-linear-gradient(top,  #2c1e63 0%,#352865 4%,#352865 9%,#43369d 29%,#43369d 58%,#562499 82%,#be88e2 100%);
-  background: linear-gradient(to bottom,  #2c1e63 0%,#352865 4%,#352865 9%,#43369d 29%,#43369d 58%,#562499 82%,#be88e2 100%);
-  border-radius: 10px;
-}
-
-
-.modal-titulo{
-  font-family: font_1;
-  font-size: x-large;
+.boton-quitar3{
+  margin-top: 10px;
+  background-color:#7966d7;
   color:antiquewhite;
 }
 
-.modal-cerrar{
-  font-size: x-large;
-  font-family: font_2;
-  color:antiquewhite;
-  
+.boton-quitar3:hover{
+  background-color: #562499;
+  cursor: pointer;
 }
-
-
- 
-.form-text{
-  font-family: font_2;
-  color:antiquewhite;
-  font-size: larger;
-
-
-}
-
-input, textarea{
-  width: 100%;
-  font-family:font_2;
-  margin-bottom: 10px;
-  padding: 5px;
-  box-sizing: border-box;
-  font-size: 18px;
-}
-
-textarea{
-  min-height: 100px;
-  max-height: 200px;
-  max-width: 100%;
-
-}
-
-.form-alert{
-  font-family: font_2;
-  color:rgb(155, 101, 255);
-  font-size:medium;
-
-}
-
-.ng-valid:not(form).ng-touched{
-  border: 1px solid rgb(32, 97, 32);
-    color: green;
-    box-shadow: 0 0 0 1px; 
-}
-
-
-.ng-invalid:not(form).ng-touched{
-  border: 2px solid red;
-    color: crimson;
-    box-shadow: 0 0 0 2px;
-}
-
-/*.ng-invalid:not(form).ng-touched{
-  border: 2px solid red;
-    color: crimson;
-    box-shadow: 0 0 0 2px;
-}*/

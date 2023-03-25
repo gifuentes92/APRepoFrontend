@@ -1,84 +1,17 @@
 <div class="topnav">
   <img class="topnav-img"  src="../assets/img/APLogo.png">
-  <button type="button" class="btnn" (click)="login()">Login</button>
+  <button type="button" class="btnn" (click)="login()" *ngIf="!isLogged">Login</button>
+  <button type="button" class="btnn" (click)="onLogOut()"*ngIf="isLogged">Cerrar sesión</button>
+
+  <button class="boton-quitar3" routerLink="/contacto">Contacto</button>
   
  
 </div>
 
 
 <div class="titulo"><p id="titulo">{{persona.nombre}}</p></div> 
-  <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarNombre" (click)="mostrarDatosEncabezado()">Editar</button>
+  <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarNombre" *ngIf="isLogged"routerLink="/editheader/{{persona.id}}">Editar</button>
 
  <img class="avatar" [src]=persona.urlfoto alt="avatar">
 <div class="desc">{{persona.puesto}} - {{persona.acercade}}</div>
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="modalEditarNombre" tabindex="-1" role="dialog" aria-labelledby="modalEditarNombre" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-fondo">
-      <div class="modal-header">
-        <h5 class="modal-titulo" id="modalEditarNombre">Editar</h5>
-        <button type="button" class="boton-quitar1" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <form [formGroup]="form">
-        <label for="nombre" class="form-text">Nombre y apellido</label>
-       <div> <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre y apellido" formControlName="nombre">
-          <div *ngIf="nombre?.invalid &&  nombre?.touched">
-          <div *ngIf="nombre?.errors?.['required']" class="form-alert">
-           Se necesita un nombre y apellido.
-          </div>
-          <div *ngIf="nombre?.errors?.['minlength']"class="form-alert">
-          El nombre y apellido debe ser de al menos 4 caracteres.
-         </div>
-        </div>   
-      </div>
-      
-      <label for="urlfoto" class="form-text">Imágen</label>
-       <input type="text" name="urlfoto" id="urlfoto" placeholder="Ingrese url de imágen" formControlName="urlfoto">
-       <div *ngIf="urlfoto?.invalid && urlfoto?.touched">
-        <div *ngIf="urlfoto?.errors?.['required']" class="form-alert">
-         Se necesita una url.
-        </div>
-       <div *ngIf="urlfoto?.errors?.['pattern']"class="form-alert">
-        No es una url válida.
-       </div>
-      </div>
-      
-        <label for="puesto" class="form-text">Posición</label>
-       <input type="text" name="puesto" id="puesto" placeholder="Ingrese posición" formControlName="puesto">
-       <div *ngIf="puesto?.invalid && puesto?.touched">
-        <div *ngIf="puesto?.errors?.['required']" class="form-alert">
-         Se necesita una posición.
-        </div>
-        <div *ngIf="puesto?.errors?.['minlength']"class="form-alert">
-        La posición debe ser de al menos 4 caracteres.
-       </div>
-      </div>
-       
-       
-       <label for="acerca_de" class="form-text">Descripción</label>
-       <input type="text" name="acercade" id="acercade" placeholder="Ingrese descripción"formControlName="acercade">
-       <div *ngIf="acercade?.invalid &&acercade?.touched">
-       <div *ngIf="acercade?.errors?.['required']" class="form-alert">
-         Se requiere una descripción.
-         </div>
-        <div *ngIf="acercade?.errors?.['maxlength']"class="form-alert">
-         La descripción debe ser de hasta 50 caracteres.
-        </div> 
-      </div>
-    </form>
-    </div> 
-      <div class="modal-footer">
-        <button type="button" id="cerrarModal" class="boton-quitar1" (click)="cerrarModalData()" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="boton-editar1"(click)="editarDatosPersona()">Guardar</button>
-      </div>
-    </div>
-  </div>
-</div>
- 
 
