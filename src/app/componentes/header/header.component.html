@@ -1,0 +1,17 @@
+<div class="topnav">
+  <img class="topnav-img"  src="../assets/img/APLogo.png">
+  <button type="button" class="btnn" (click)="login()" *ngIf="!isLogged">Login</button>
+  <button type="button" class="btnn" (click)="onLogOut()"*ngIf="isLogged">Cerrar sesión</button>
+
+  <button class="boton-quitar3" routerLink="/contacto">Contacto</button>
+  
+ 
+</div>
+
+
+<div class="titulo"><p id="titulo">{{persona.nombre}}</p></div> 
+  <button type="button" class="boton-quitar1" data-bs-toggle="modal" data-bs-target="#modalEditarNombre" *ngIf="isLogged"routerLink="/editheader/{{persona.id}}">Editar</button>
+
+ <img class="avatar" [src]=persona.urlfoto alt="avatar">
+<div class="desc">{{persona.puesto}} - {{persona.acercade}}</div>
+

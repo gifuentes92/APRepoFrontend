@@ -1,0 +1,36 @@
+
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+      <div class="modal-fondo">
+        <div class="modal-header">
+          <h5 class="modal-titulo" id="modalEditarNombre">Editar</h5>
+        </div>
+        <div class="modal-body">
+         <form (ngSubmit)="onUpdateH()" novalidate #f="ngForm">
+          <label for="nombre" class="form-text">Nombre y apellido</label>
+         <div> <input type="text" name="nombre" id="nombre" placeholder="Ingrese nombre y apellido" [(ngModel)]="persEdit.nombre">
+              
+        </div>
+        
+        <label for="urlfoto" class="form-text">Imágen</label>
+         <input type="text" name="urlfoto" id="urlfoto" placeholder="Ingrese url de imágen" [(ngModel)]="persEdit.urlfoto">
+        
+        
+          <label for="puesto" class="form-text">Posición</label>
+         <input type="text" name="puesto" id="puesto" placeholder="Ingrese posición" [(ngModel)]="persEdit.puesto">
+         
+         
+         
+         <label for="acerca_de" class="form-text">Descripción</label>
+         <input type="text" name="acercade" id="acercade" placeholder="Ingrese descripción" [(ngModel)]="persEdit.acercade">
+         
+      </form>
+      </div> 
+        <div class="modal-footer">
+          <button type="button" id="cerrarModal" class="boton-quitar1" routerLink="/portfolio">Cancelar</button>
+          <button type="button" class="boton-editar1"(click)="onUpdateH()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  
+   
+  

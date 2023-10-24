@@ -1,0 +1,24 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-fondo">
+        <div class="modal-header">
+            <h5 class="modal-titulo" id="modalEditIdiomaLabel">Editar</h5>
+            
+            
+        </div>
+        <form (ngSubmit)="onUpdateI()" novalidate #f="ngForm">
+            <div class="modal-body">
+                <div><label for="lenguaje" class="form-text">Habilidad</label>
+                    <input type="text" name="lenguaje" id="lenguaje" placeholder="Ingrese habilidad"[(ngModel)]="idiEdit.lenguaje" required>
+                </div>
+                <div><label for="nivel" class="form-text">Programa</label>
+                    <input type="text" name="nivel" id="nivel" placeholder="Ingrese programa"[(ngModel)]="idiEdit.nivel" required>
+                </div>
+
+            </div>
+        </form>
+        <div class="modal-footer">
+            <button type="button" id="cerrarModal" class="boton-quitar3" routerLink="/portfolio">Cerrar</button>
+            <button type="button" class="boton-editar3" (click)="onUpdateI()">Guardar</button>
+        </div>
+    </div>
+</div>

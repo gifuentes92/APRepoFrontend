@@ -1,0 +1,59 @@
+.body{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: -moz-linear-gradient(top,  #151133 24%, #2e1b63 57%, #2e1b63 76%, #7966d7 99%);
+  background: -webkit-linear-gradient(top,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
+  background: linear-gradient(to bottom,  #151133 24%,#2e1b63 57%,#2e1b63 76%,#7966d7 99%);
+  
+  
+}
+
+
+@font-face {
+    font-family:font_1;
+    src: url(../assets/fonts/Pixellari.ttf);
+    font-style:normal;
+    font-weight:normal;
+  }
+  
+  @font-face {
+    font-family:font_2;
+    src: url(../assets/fonts/Vcr.ttf);
+    font-style:normal;
+    font-weight:normal;
+  }
+  
+    
+   
+  
+  
+  .desc{
+      font-family:font_2;
+      font-size: 1.7em;
+      text-align: center;
+      color:antiquewhite;
+      text-shadow:1px 1px 2px #151133;
+  }
+  
+
+  
+  
+  .pixellari{
+    font-family:font_1;
+    font-size: xx-large;
+    color:antiquewhite
+  }
+  
+  .ul{
+    font-family:font_2;
+    font-size:large;
+    color:antiquewhite;
+  }
+  
+  
+
+  
+  
+
+  

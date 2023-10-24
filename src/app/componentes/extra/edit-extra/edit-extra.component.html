@@ -1,0 +1,24 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-fondo">
+        <div class="modal-header">
+            <h5 class="modal-titulo" id="modalEditarEducacionLabel">Editar</h5>
+            
+            
+        </div>
+        <form (ngSubmit)="onUpdateE()" novalidate #f="ngForm">
+            <div class="modal-body">
+                <div><label for="skill" class="form-text">Habilidad</label>
+                    <input type="text" name="skill" id="skill" placeholder="Ingrese habilidad" [(ngModel)]="extraEdit.skill" required>
+                </div>
+                <div><label for="programa" class="form-text">Programa</label>
+                    <input type="text" name="programa" id="programa" placeholder="Ingrese programa"[(ngModel)]="extraEdit.programa" required>
+                </div>
+
+            </div>
+        </form>
+        <div class="modal-footer">
+            <button type="button" id="cerrarModal" class="boton-quitar3" data-bs-dismiss="modal" routerLink="/portfolio">Cerrar</button>
+            <button type="button" class="boton-editar3"(click)="onUpdateE()">Guardar</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+.bg{
+  height:100%;
+}
+form{
+    background-image:url(assets/bg2.png);
+    background-size:cover;
+    background-attachment:local;
+    width: 450px;
+    margin:auto;
+    padding: 10px 20px;
+    font-family:font_2;
+    box-sizing: border-box;
+    margin-top:20px;
+    margin-bottom: 80px;
+    border-radius: 7px;
+    padding:100px 20px 100px 20px;
+  }
+  
+  .h2-form, h2{
+    font-family: font_1;
+    text-align: center;
+    font-size: 35px;
+    color:antiquewhite;
+    -webkit-text-stroke: #050736 1px;
+  
+  
+  }
+
+    label{
+        font-family: font_2;
+        font-size: 20px;
+        text-shadow:2px 2px #050736;
+        color:antiquewhite;
+        text-decoration: underline;
+    }  
+  
+  input, textarea{
+    width: 100%;
+    font-family:font_2;
+    margin-bottom: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border:1px darkgray;
+  }
+  
+  textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+  
+  }
+  
+  .boton-enviar{
+    margin: 0 42%;
+    font-family: font_2;  
+    padding: 6px;
+    border: none;
+    background-color: rgb(203, 71, 255);
+    text-emphasis-color:  antiquewhite;
+    margin-right: 16px;
+    font-size: 17px;
+    border-radius: 8px;
+    box-sizing: content-box;
+  }
+  
+  .boton-enviar:hover{
+    cursor:pointer;
+    font-family: font_2;
+    background-color: #a865ff;
+    color: antiquewhite;
+    border-radius: 5px;
+    transition: all 200ms ease-out;
+    transition-property: all;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+}
+
+
+
+
+  @media (max-width:450px) {
+    form{
+      width:100%;
+    }
+  }

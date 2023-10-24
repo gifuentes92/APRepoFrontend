@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="./extra.component.css">
+<div class="parrafo">
+  <div>
+    <h2 class="pixellari">Conocimientos Extra</h2>
+  </div>
+  <ul class="ul" id="parrafo" *ngFor="let item of extralist">
+    <li>{{item.skill}} en {{item.programa}}</li>
+
+    <button type="button" class="boton-editar1" *ngIf="isLogged" (click)="deleteE(item.id)">Eliminar</button>
+    <button type="button" class="boton-quitar1" *ngIf="isLogged" routerLink="/editextra/{{item.id}}"> Editar </button>
+  </ul>
+  <br>
+  <br>
+  <button type="button" class="boton-quitar3" data-bs-toggle="modal" data-bs-target="#ModalAgregarExtra"
+    *ngIf="isLogged">Agregar</button>
+</div>
+
+
+
+
+<div class="modal fade" id="ModalAgregarExtra" tabindex="-1" role="dialog" aria-labelledby="ModalAgregarExtraLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-fondo">
+      <div class="modal-header">
+        <h5 class="modal-titulo" id="modalEditarEducacionLabel">Agregar</h5>
+        <button type="button" class="boton-quitar1" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onCreateE()" novalidate #f="ngForm">
+          <div><label for="skill" class="form-text">Habilidad</label>
+            <input type="text" name="skill" id="skill" placeholder="Ingrese habilidad" [(ngModel)]="skill" required>
+          </div>
+          <div><label for="programa" class="form-text">Programa</label>
+            <input type="text" name="programa" id="programa" placeholder="Ingrese programa" [(ngModel)]="programa"
+              required>
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cerrarModal" class="boton-quitar3" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="boton-editar3" (click)="onCreateE()">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>

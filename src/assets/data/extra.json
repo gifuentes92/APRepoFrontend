@@ -1,0 +1,25 @@
+{
+    "extra":[
+
+        {"skill":"Edición de imagenes",
+        "programa":"Adobe photoshop"
+        },
+        
+        
+        {"skill":"Adobe photoshop",
+            "programa":"Adobe premiere y Adobe After effects"},
+
+            
+        {"skill":"Edición de audio",
+            "programa":"Audacity" },
+
+            
+        {"skill":"Edición de sprites y pixelart",
+            "programa":"Aseprite"}
+
+
+        
+
+
+        ]
+ }
